@@ -3,7 +3,9 @@ let nodemailer = require('nodemailer')
   export default function (req, res) {
     require('dotenv').config()
     
-    const password = process.env.password
+    const password = process.env.password;
+    const mailTo = process.env.to;
+    const mail = process.env.mail;
 
     const transporter = nodemailer.createTransport({
       port: 465,
@@ -18,8 +20,8 @@ let nodemailer = require('nodemailer')
     
 
     const mailData = {
-      from: 'regalis.dummycontact@gmail.com',
-      to: 'gabriel_alejandrosr@hotmail.com',
+      from: mail,
+      to: mailTo,
       subject: `Message From ${req.body.name}`,
       text: `${req.body.message} | Sent from: ${req.body.email}`,
       html: `<h1><strong>You have a new contact form submission </strong></h1><br>

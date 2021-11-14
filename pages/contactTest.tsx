@@ -1,30 +1,29 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import Link from "next/link";
 import Head from 'next/head'
 import styles from "../src/styles/contact.module.css";
-import { useState } from "react";
-import axios from "axios"
+import Navbar from "../src/components/Navbar";
 
+
+type FormValues = {
+  name: string,
+  email: string,
+  message: string
+}
 
 export default function ContactTest() {
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [submitted, setSubmitted] = useState(false);
 
-  const {register, handleSubmit, formState: { errors }} = useForm();
-  //console.log(errors);
+ 
+  
 
-  const onSubmitForm = (e:any) => { 
+  const {register, handleSubmit, formState: { errors }, resetField} = useForm<FormValues>();
+  
+
+  const onSubmitForm = (data:any) => { 
     // e.preventDefault()
     console.log('Sending')
-  let data = {
-      name,
-      email,
-      message
-    }
+ 
   fetch('/api/contact', {
       method: 'POST',
       headers: {
@@ -35,37 +34,29 @@ export default function ContactTest() {
     }).then((res) => {
       console.log('Response received')
       if (res.status === 200) {
-        //console.log('Response succeeded!')
-        setSubmitted(true)
-        setName('')
-        setEmail('')
-        setMessage('')
+        console.log('Response succeeded!')
       }
     })
 
-    document.getElementsByTagName('input')[0].value = "";
-    document.getElementsByTagName('input')[1].value = "";
-    document.getElementsByTagName('textarea')[0].value = "";
+    resetField("name");
+    resetField("email");
+    resetField("message");
   }
-
-//  async function onSubmitForm (values:any) {
-//     let config = {
-//       method: 'post',
-//       url: '/api/contact',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       data: values
-//     };
-//     const response = await axios(config);
-//     console.log(response)
-//   }
   
   
 return (
+  <> 
+  <Head>
+      <title>Contact Page</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    </Head>
+  <Navbar />
+  <br />
+  <br />
+  <br />
   <div>
-    <div>
-      <h1 className={styles.center} >Christmas gifts season</h1>
+    <div className={styles.center} >
+      <h1>Contact us!</h1>
     </div>
     <br />
 
@@ -87,7 +78,7 @@ return (
               message: "This name is too long"
             }
           })}
-        placeholder="Your name" autoComplete="off" autoFocus onChange={(e)=>{setName(e.target.value)}} 
+        placeholder="Your name" autoComplete="off" autoFocus  
         name='name' className={styles.inputField} /> 
         <span className={styles.span}>{errors?.name?.message}</span>
       </div>
@@ -108,7 +99,7 @@ return (
             value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
             message: "Invalid email address"
           }
-        })} placeholder="example@email.com" autoComplete="off"  onChange={(e)=>{setEmail(e.target.value)}}
+        })} placeholder="example@email.com" autoComplete="off" 
          name='email' className={styles.inputField} />
 
          <span className={styles.span}>{errors?.email?.message}</span>
@@ -127,22 +118,18 @@ return (
             message: "Message cannot be longer than 120 characters"
           }
 
-        })} placeholder="Example Message" autoComplete="off" minLength={20} onChange={(e)=>{setMessage(e.target.value)}}
+        })} placeholder="Example Message" autoComplete="off" minLength={20} 
          name='message' className={styles.textArea} />
          <span className={styles.span}>{errors?.message?.message}</span>
       </div>
 
-      <input type="submit" value="send" className={styles.send} />
+      <input type="submit" value="Send" className={styles.send} />
 
       </form >
-      <br />
-      <br />
-        <div className={styles.center}>
-        <Link href="/">Home</Link>
-        </div>
+      
     </div>
 </div>
-
+</>
 )
   
   
