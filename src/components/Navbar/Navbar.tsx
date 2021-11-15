@@ -1,8 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import styles from "../styles/Navbar.module.css"
-import heroStyle from "../styles/Hero.module.css"
-import Hero from './Hero'
+import styles from "./Navbar.module.scss"
+
 
 export default function Navbar() {
     return (

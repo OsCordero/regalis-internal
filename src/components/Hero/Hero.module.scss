@@ -1,0 +1,42 @@
+.text {
+  /* margin-right: 35%; */
+  justify-content: left;
+  width: 60%;
+}
+
+.gift {
+  height: 45%;
+  width: 45%;
+  float: right;
+}
+
+.hero {
+  height: 600px;
+  display: inline-block;
+}
+
+@media (max-width: 800px) {
+  .text {
+    font-size: 75%;
+  }
+  .hero {
+    height: 500px;
+  }
+  .hero.gift {
+    height: 35%;
+    width: 35%;
+  }
+}
+
+@media (max-width: 576px) {
+  .text {
+    font-size: 55%;
+  }
+  .hero {
+    height: 400px;
+  }
+  .hero.gift {
+    height: 30%;
+    width: 30%;
+  }
+}

@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
-import Link from "next/link";
-import Hero from "../src/components/Hero";
-import Navbar from "../src/components/Navbar"
+import Hero from "../src/components/Hero/Hero";
+import Navbar from "../src/components/Navbar/Navbar"
 import Head from "next/head";
 
 const Home: NextPage = () => {
@@ -12,7 +11,7 @@ const Home: NextPage = () => {
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
  
-    <div className="container">
+    <div className="color">
       <Navbar />
       <Hero />
       
