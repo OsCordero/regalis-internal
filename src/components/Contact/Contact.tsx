@@ -56,7 +56,7 @@ return (
   <br />
   <div>
     <div className={styles.center} >
-      <h1>Contact us!</h1>
+      <h1>Contact us!!</h1>
     </div>
     <br />
 
