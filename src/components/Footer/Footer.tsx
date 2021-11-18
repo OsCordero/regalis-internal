@@ -1,21 +1,15 @@
 import React from 'react'
+import styles from './Footer.module.scss'
 import Link from 'next/link'
-import styles from "./Navbar.module.scss"
-import Image from "next/image"
+import Image from 'next/image'
 
-
-export default function Navbar() {
+export default function Footer() {
     return (
         <>
-          <div className={styles.container}>
-            <nav className={styles.navbar}>
+            <div className={styles.footer}>
+            <footer>
 
-                <Link href="/"> 
-                    <div className={styles.logo}>
-                        <img src="/Regalis2.png" height="200px" width="200px" />
-                    </div>
-                </Link>
-                <ul className={styles.navItems}>
+                <ul className={styles.footerItems}>
 
                     {/* <li>
                     <Link href="/"> 
@@ -24,14 +18,14 @@ export default function Navbar() {
                         </div>
                     </Link>
                     </li> */}
-                    <li className={styles.navItem}>
+                    <li className={styles.footerItem}>
                     <Link href="/productTest"> 
                         <div>
                            <strong> Product</strong> 
                         </div>
                     </Link>
                     </li>
-                    <li className={styles.navItem}>
+                    <li className={styles.footerItem}>
                     <Link href="/aboutTest"> 
                         <div >
                             <strong> About</strong>
@@ -39,7 +33,7 @@ export default function Navbar() {
                         </div>
                     </Link>
                     </li>
-                    <li className={styles.navItem}>
+                    <li className={styles.footerItem}>
                     <Link href="/contactTest"> 
                         <div >
                             <strong>Contact</strong>
@@ -47,7 +41,7 @@ export default function Navbar() {
                         </div>
                     </Link>
                     </li>
-                    <li className={styles.navItem}>
+                    <li className={styles.footerItem}>
                     <Link href="/reviewsTest"> 
                         <div >
                             <strong>Reviews</strong>
@@ -55,7 +49,7 @@ export default function Navbar() {
                         </div>
                     </Link>
                     </li>
-                    <li className={styles.navItem}>
+                    <li className={styles.footerItem}>
                     <Link href="/helpTest"> 
                         <div >
                             <strong>Help</strong>
@@ -63,7 +57,7 @@ export default function Navbar() {
                         </div>
                     </Link>
                     </li>
-                    <li className={styles.navItem}>
+                    <li className={styles.footerItem}>
                     <Link href="/faqsTest"> 
                         <div >
                             <strong>FAQ's</strong>
@@ -72,10 +66,17 @@ export default function Navbar() {
                     </Link>
                     </li>
                 </ul>
-            </nav>
 
+                <Link href="/"> 
+                    <div className={styles.logo}>
+                        <img src="/footer-gifts.png" height="124.5" width="286.25" />
+                    </div>
+                </Link>
+            </footer>
+            </div>
             
-            </div>   
+              
+            
         </>
     )
 }
