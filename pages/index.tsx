@@ -6,7 +6,6 @@ import Head from "next/head";
 import { useMoralis } from "react-moralis";
 
 const Home: NextPage = () => {
-  const { authenticate, isAuthenticated } = useMoralis();
   return (
     <>
       <Head>
@@ -18,19 +17,8 @@ const Home: NextPage = () => {
         <Navbar />
         <Hero />
 
-        <div>
-          <h1>Christmas gifts season</h1>
-          {isAuthenticated ? (
-            <p>You are logged in</p>
-          ) : (
-            <>
-              <p>You are not logged in</p>
-              <button onClick={() => authenticate()}>Authenticate</button>
-            </>
-          )}
-
-          <Link href="/contactTest">Questions</Link>
-        </div>
+        <Link href="/contactTest">Questions</Link>
+        <Link href="/signin">Sign in</Link>
       </div>
     </>
   );
