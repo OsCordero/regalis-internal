@@ -1,6 +1,7 @@
 import type { AppProps } from "next/app";
 import { MoralisProvider } from "react-moralis";
 import "../src/styles/global.css";
+import 'tailwindcss/tailwind.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

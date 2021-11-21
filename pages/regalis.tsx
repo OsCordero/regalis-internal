@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useMoralis, useMoralisWeb3Api } from "react-moralis";
+import { useMoralis, useMoralisWeb3Api, useWeb3ExecuteFunction } from "react-moralis";
 import { abi } from "../src/constants/abi";
+
 
 interface NftResult {
   token_address: string;
@@ -25,10 +26,19 @@ interface DefaultGift {
   4: string;
 }
 
+//  const {Moralis} = useMoralis();
+
+
+
 const Regalis = () => {
   const { signup, isInitialized } = useMoralis();
   const Web3Api = useMoralisWeb3Api();
+  const executeFunction = useWeb3ExecuteFunction();
   const [nfts, setNfts] = useState<DefaultGift[]>([]);
+
+  const Moralis = require('moralis')
+  Moralis.initialize ;
+  // const web3 = Moralis.enableWeb3();
 
   const getNft = async () => {
     const testnetNFTs = await Web3Api.native.runContractFunction({
@@ -45,16 +55,28 @@ const Regalis = () => {
       getNft().then((res) => setNfts(res as unknown as DefaultGift[]));
   }, [isInitialized]);
 
-  return (
-    <div>
-      <h1>Available gifts:</h1>
-      <ul>
-        {nfts.map((nft) => (
-          <li key={nft["0"]}>{nft["1"]}</li>
-        ))}
-      </ul>
-    </div>
-  );
+
+
+ 
+
+  
+ 
+
+
+return (
+  <div>
+    <h1>Available gifts:</h1>
+    <ul>
+      {nfts.map((nft) => (
+        <li key={nft["0"]}>{nft["1"]}</li>
+      ))}
+    </ul>
+  </div>
+);
+
+
+  
+ 
 };
 
 export default Regalis;

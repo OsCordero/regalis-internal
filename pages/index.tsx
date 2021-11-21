@@ -3,8 +3,13 @@ import Head from "next/head";
 import Link from "next/link";
 import Hero from "../src/components/Hero/Hero";
 import Navbar from "../src/components/Navbar/Navbar";
+// import { useEffect } from "react";
 
 const Home: NextPage = () => {
+  // useEffect(() => {
+  //   alert('Finished loading');
+  // }, [])
+
   return (
     <>
       <Head>
@@ -12,12 +17,8 @@ const Home: NextPage = () => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
-      <div className="color">
-        <Navbar />
-        <Hero />
-      </div>
-
       <div className="container">
+        {/* <Header /> */}
         <Navbar />
         <Hero />
 
