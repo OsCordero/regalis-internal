@@ -32,6 +32,13 @@ function FeaturesBlocks() {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <g fill="none" fillRule="evenodd">
+                  {/* <img
+                    className="inline object-cover w-16 h-16 mr-2 rounded-full"
+                    src="https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                    alt="Profile image"
+                    height="64"
+                    width="64"
+                  /> */}
                   <rect
                     className="fill-current text-blue-600"
                     width="64"
