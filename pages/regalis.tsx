@@ -55,6 +55,7 @@ const Regalis = () => {
   useEffect(() => {
     if (isInitialized)
       getNft().then((res) => setNfts(res as unknown as DefaultGift[]));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInitialized]);
 
   return (
