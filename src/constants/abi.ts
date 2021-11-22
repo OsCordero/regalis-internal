@@ -12,33 +12,23 @@ export const abi = [
         type: "string[]",
       },
       {
-        internalType: "uint256[]",
-        name: "characterHp",
-        type: "uint256[]",
+        internalType: "address",
+        name: "_VRFCordinator",
+        type: "address",
       },
       {
-        internalType: "uint256[]",
-        name: "characterAttackDmg",
-        type: "uint256[]",
+        internalType: "address",
+        name: "_LinkToken",
+        type: "address",
       },
       {
-        internalType: "string",
-        name: "bossName",
-        type: "string",
-      },
-      {
-        internalType: "string",
-        name: "bossImageURI",
-        type: "string",
+        internalType: "bytes32",
+        name: "_keyHash",
+        type: "bytes32",
       },
       {
         internalType: "uint256",
-        name: "bossHp",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "bossAttackDamage",
+        name: "_fee",
         type: "uint256",
       },
     ],
@@ -93,25 +83,6 @@ export const abi = [
       },
     ],
     name: "ApprovalForAll",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: "uint256",
-        name: "newBossHp",
-        type: "uint256",
-      },
-      {
-        indexed: false,
-        internalType: "uint256",
-        name: "newPlayerHp",
-        type: "uint256",
-      },
-    ],
-    name: "AttackComplete",
     type: "event",
   },
   {
@@ -183,13 +154,6 @@ export const abi = [
     type: "function",
   },
   {
-    inputs: [],
-    name: "attackBoss",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
     inputs: [
       {
         internalType: "address",
@@ -202,39 +166,6 @@ export const abi = [
       {
         internalType: "uint256",
         name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "bigBoss",
-    outputs: [
-      {
-        internalType: "string",
-        name: "name",
-        type: "string",
-      },
-      {
-        internalType: "string",
-        name: "imageURI",
-        type: "string",
-      },
-      {
-        internalType: "uint256",
-        name: "hp",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "maxHp",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "attackDamage",
         type: "uint256",
       },
     ],
@@ -262,23 +193,8 @@ export const abi = [
             name: "imageURI",
             type: "string",
           },
-          {
-            internalType: "uint256",
-            name: "hp",
-            type: "uint256",
-          },
-          {
-            internalType: "uint256",
-            name: "maxHp",
-            type: "uint256",
-          },
-          {
-            internalType: "uint256",
-            name: "attackDamage",
-            type: "uint256",
-          },
         ],
-        internalType: "struct Cryptoboxes.CharacterAttributes",
+        internalType: "struct RegalisVRF.RegalisBoxes",
         name: "",
         type: "tuple",
       },
@@ -307,23 +223,8 @@ export const abi = [
             name: "imageURI",
             type: "string",
           },
-          {
-            internalType: "uint256",
-            name: "hp",
-            type: "uint256",
-          },
-          {
-            internalType: "uint256",
-            name: "maxHp",
-            type: "uint256",
-          },
-          {
-            internalType: "uint256",
-            name: "attackDamage",
-            type: "uint256",
-          },
         ],
-        internalType: "struct Cryptoboxes.CharacterAttributes[]",
+        internalType: "struct RegalisVRF.RegalisBoxes[]",
         name: "",
         type: "tuple[]",
       },
@@ -352,42 +253,15 @@ export const abi = [
   },
   {
     inputs: [],
-    name: "getBigBoss",
+    name: "getRandomBox",
     outputs: [
       {
-        components: [
-          {
-            internalType: "string",
-            name: "name",
-            type: "string",
-          },
-          {
-            internalType: "string",
-            name: "imageURI",
-            type: "string",
-          },
-          {
-            internalType: "uint256",
-            name: "hp",
-            type: "uint256",
-          },
-          {
-            internalType: "uint256",
-            name: "maxHp",
-            type: "uint256",
-          },
-          {
-            internalType: "uint256",
-            name: "attackDamage",
-            type: "uint256",
-          },
-        ],
-        internalType: "struct Cryptoboxes.BigBoss",
+        internalType: "bytes32",
         name: "",
-        type: "tuple",
+        type: "bytes32",
       },
     ],
-    stateMutability: "view",
+    stateMutability: "nonpayable",
     type: "function",
   },
   {
@@ -412,19 +286,6 @@ export const abi = [
       },
     ],
     stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "_characterIndex",
-        type: "uint256",
-      },
-    ],
-    name: "mintCharacterNFT",
-    outputs: [],
-    stateMutability: "nonpayable",
     type: "function",
   },
   {
@@ -465,21 +326,6 @@ export const abi = [
         name: "imageURI",
         type: "string",
       },
-      {
-        internalType: "uint256",
-        name: "hp",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "maxHp",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "attackDamage",
-        type: "uint256",
-      },
     ],
     stateMutability: "view",
     type: "function",
@@ -512,6 +358,43 @@ export const abi = [
       },
     ],
     name: "ownerOf",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "bytes32",
+        name: "requestId",
+        type: "bytes32",
+      },
+      {
+        internalType: "uint256",
+        name: "randomness",
+        type: "uint256",
+      },
+    ],
+    name: "rawFulfillRandomness",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "bytes32",
+        name: "",
+        type: "bytes32",
+      },
+    ],
+    name: "requestToSender",
     outputs: [
       {
         internalType: "address",

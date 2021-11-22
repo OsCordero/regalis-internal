@@ -1,18 +1,24 @@
 .text {
   /* margin-right: 35%; */
-  justify-content: left;
-  width: 60%;
+  text-align: right;
+  padding: 50px;
+  max-width: 800px;
+  h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
 }
 
 .gift {
-  height: 45%;
-  width: 45%;
-  float: right;
+  position: absolute;
+  right: 15vw;
 }
 
 .hero {
-  height: 600px;
-  display: inline-block;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  width: 100%;
 }
 
 @media (max-width: 800px) {
