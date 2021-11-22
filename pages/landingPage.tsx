@@ -11,7 +11,7 @@ import Team from "../src/components/Team";
 
 export default function landingPage() {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen overflow-hidden">
       <Head>
         <title>Regalis</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
