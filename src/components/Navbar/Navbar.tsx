@@ -1,19 +1,25 @@
-import Link from "next/link";
-import React from "react";
-import styles from "../styles/Navbar.module.css";
+
+import React from 'react'
+import Link from 'next/link'
+import styles from "./Navbar.module.scss"
+
+
 
 export default function Navbar() {
-  return (
-    <>
-      <div className={styles.container}>
-        <nav className={styles.navbar}>
-          <Link href="/">
-            <div className={styles.logo}>
-              <strong>Regalis</strong>
-            </div>
-          </Link>
-          <ul className={styles.navItems}>
-            {/* <li>
+    return (
+        <>
+          <div className={styles.container}>
+            <nav className={styles.navbar}>
+
+                <Link href="/"> 
+                    <div className={styles.logo}>
+                        <img src="/Regalis2.png" height="200px" width="200px" />
+                    </div>
+                </Link>
+                <ul className={styles.navItems}>
+
+                    {/* <li>
+
                     <Link href="/"> 
                         <div className={styles.logo}>
                             <strong>Logo</strong>

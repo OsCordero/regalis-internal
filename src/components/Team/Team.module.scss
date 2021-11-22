@@ -1,0 +1,56 @@
+.container {
+  height: 110vh;
+  background-color: white;
+}
+
+.circle {
+  border-radius: 50%;
+  background-color: #ffa9a9;
+}
+
+.team {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.teamMember img {
+  float: left;
+  vertical-align: middle;
+  margin: 5px;
+  padding: 5px;
+}
+
+.teamMember {
+  margin-right: 5%;
+  margin-left: 5%;
+  width: 40%;
+  text-align: center;
+}
+
+.text {
+  margin-left: 5px;
+  text-align: justify;
+}
+
+@media (max-width: 1100px) {
+  .text {
+    font-size: 90%;
+  }
+}
+
+@media (max-width: 800px) {
+  .text {
+    font-size: 75%;
+  }
+}
+
+@media (max-width: 685px) {
+  .text {
+    font-size: 65%;
+  }
+  .teamMember img {
+    height: 80px;
+    width: 80px;
+  }
+}

@@ -5,7 +5,7 @@ import Image from "next/image"
 export default function Hero() {
     return (
         <>
-        
+        <div className={styles.color}>
         <div className={styles.hero}>
         <br />
         <br />
@@ -19,8 +19,9 @@ export default function Hero() {
             
 
             <div className={styles.gift}>
-                <Image src="/gift.png" height={898.5} width={895} />
+                <Image src="/gift.png" height={599} width={596.66} />
             </div>
+        </div>
         </div>
         </>
     )
