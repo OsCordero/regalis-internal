@@ -135,7 +135,8 @@ function Testimonials() {
                   </svg>
                   <img
                     className="relative rounded-full"
-                    /* src={require('../images/testimonial.jpg').default} */ width="96"
+                    src="/testimonial.jpg"
+                    width="96"
                     height="96"
                     alt="Testimonial 01"
                   />
