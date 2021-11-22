@@ -12,9 +12,13 @@ import { useMoralis } from "react-moralis";
 import Link from "next/link";
 import Hero from "../src/components/Hero/Hero";
 import Navbar from "../src/components/Navbar/Navbar";
-
+// import { useEffect } from "react";
 
 const Home: NextPage = () => {
+  // useEffect(() => {
+  //   alert('Finished loading');
+  // }, [])
+
   return (
     <>
       <Head>
@@ -22,35 +26,18 @@ const Home: NextPage = () => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
-
-
       <div className="container">
+        {/* <Header /> */}
         <Navbar />
         <Hero />
 
-
-        <div>
-          <h1>Christmas gifts season</h1>
-          {isAuthenticated ? (
-            <p>You are logged in</p>
-          ) : (
-            <>
-              <p>You are not logged in</p>
-              <button onClick={() => authenticate()}>Authenticate</button>
-            </>
-          )}
-
-
-        </div>
-
-      <OurServices />
-      <Slider slides={SliderData} />
-      <Team />
-      <Footer />
+        <OurServices />
+        <Slider slides={SliderData} />
+        <Team />
+        <Footer />
 
         <Link href="/contactTest">Questions</Link>
         <Link href="/signin">Sign in</Link>
-
       </div>
     </>
   );
