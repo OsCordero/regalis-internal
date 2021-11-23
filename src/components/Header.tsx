@@ -26,7 +26,8 @@ function Header() {
             {/* Logo */}
             <Link href="/" passHref aria-label="Cruip">
               <a className="block">
-                <svg
+                <img src="/Regalis2.png" alt="Regalis" width="96" height="96" />
+                {/* <svg
                   className="w-8 h-8"
                   viewBox="0 0 32 32"
                   xmlns="http://www.w3.org/2000/svg"
@@ -44,6 +45,7 @@ function Header() {
                       <stop stopColor="#81E6D9" offset="25.871%" />
                       <stop stopColor="#338CF5" offset="100%" />
                     </radialGradient>
+                    
                   </defs>
                   <rect
                     width="32"
@@ -52,7 +54,7 @@ function Header() {
                     fill="url(#header-logo)"
                     fillRule="nonzero"
                   />
-                </svg>
+                </svg> */}
               </a>
             </Link>
           </div>
