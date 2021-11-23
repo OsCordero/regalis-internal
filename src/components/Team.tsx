@@ -13,8 +13,8 @@ export default function Team() {
             accusantium doloremque laudantium.
           </p>
         </div>
-        <div className="grid gap-10 mx-auto lg:grid-cols-2 lg:max-w-screen-lg">
-          <div className="grid sm:grid-cols-3">
+        <div className="grid gap-10 mx-auto lg:grid-cols-2 lg:max-w-screen-lg justify-center">
+          <div className="grid sm:grid-cols-3 shadow-sm	">
             <div className="relative w-full h-48 max-h-full rounded shadow sm:h-auto">
               <img
                 className="absolute object-cover w-full h-full rounded"
@@ -48,11 +48,11 @@ export default function Team() {
               </div>
             </div>
           </div>
-          <div className="grid sm:grid-cols-3">
+          <div className="grid sm:grid-cols-3 shadow-sm	">
             <div className="relative w-full h-48 max-h-full rounded shadow sm:h-auto">
               <img
                 className="absolute object-cover w-full h-full rounded"
-                src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
+                src="/images/team/oscar.webp"
                 alt="Person"
               />
             </div>
@@ -82,7 +82,7 @@ export default function Team() {
               </div>
             </div>
           </div>
-          <div className="grid sm:grid-cols-3">
+          <div className="grid sm:grid-cols-3 shadow-sm	">
             <div className="relative w-full h-48 max-h-full rounded shadow sm:h-auto">
               <img
                 className="absolute object-cover w-full h-full rounded"
@@ -118,7 +118,7 @@ export default function Team() {
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-3">
+          <div className="grid sm:grid-cols-3 shadow-sm	">
             <div className="relative w-full h-48 max-h-full rounded shadow sm:h-auto">
               <img
                 className="absolute object-cover w-full h-full rounded"
@@ -154,7 +154,7 @@ export default function Team() {
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-3">
+          <div className="grid sm:grid-cols-3 shadow-sm	">
             <div className="relative w-full h-48 max-h-full rounded shadow sm:h-auto">
               <img
                 className="absolute object-cover w-full h-full rounded"
@@ -190,7 +190,7 @@ export default function Team() {
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-3">
+          <div className="grid sm:grid-cols-3 shadow-sm	">
             <div className="relative w-full h-48 max-h-full rounded shadow sm:h-auto">
               <img
                 className="absolute object-cover w-full h-full rounded"

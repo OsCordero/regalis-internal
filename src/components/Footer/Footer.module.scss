@@ -1,0 +1,136 @@
+.footer {
+  background: #eb6057;
+  height: 250px;
+  width: 100%;
+  bottom: 0;
+}
+
+.logo {
+  margin-top: 20px;
+  margin-right: 20px;
+  padding-left: 60px;
+  float: right;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.footerItems {
+  float: left;
+  margin-left: 5vw;
+  line-height: 220px;
+}
+
+.footerItem strong:hover {
+  background: rgba(212, 190, 190, 0.651);
+  transition: 0.5s;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.footerItem {
+  display: inline-block;
+  margin: 0 2.5vw;
+  margin-top: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 7px 13px;
+  border-radius: 3px;
+}
+
+@media (max-width: 1450px) {
+  .footerItems {
+    margin-left: 3.5vw;
+  }
+  .footerItem {
+    font-size: 14px;
+    padding: 5px 10px;
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+}
+
+@media (max-width: 1200px) {
+  // .logo {
+  //   height: 150px;
+  //   width: 150px;
+  // }
+  .footerItems {
+    margin-left: 3vw;
+  }
+  .footerItem {
+    font-size: 14px;
+    padding: 5px 10px;
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+}
+
+@media (max-width: 1100px) {
+  .logo {
+    padding-left: 20px;
+  }
+
+  .logo img {
+    padding-left: 10px;
+    height: 99.6px;
+    width: 229px;
+  }
+  .footerItems {
+    margin-left: 1.5vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .logo img {
+    padding-left: 10px;
+    height: 99.6px;
+    width: 229px;
+  }
+  .footerItems {
+    margin-left: 1vw;
+  }
+  .footerItem {
+    font-size: 12px;
+    padding: 4px 8px;
+    margin-left: 1vw;
+    margin-right: 1vw;
+  }
+}
+
+@media (max-width: 755px) {
+  .logo img {
+    padding-left: 0;
+    height: 79.68px;
+    width: 183.2px;
+  }
+  .footerItems {
+    margin-left: 1vw;
+  }
+  .footerItem {
+    font-size: 10px;
+    padding: 2.5px 5px;
+    margin-left: 0.75vw;
+    margin-right: 0.75vw;
+  }
+}
+
+@media (max-width: 426px) {
+  // .logo {
+  //   padding: 0 20px;
+  //   font-size: 20px;
+  // }
+  .footerItems {
+    margin-left: 0.75vw;
+  }
+  .footerItem {
+    font-size: 8px;
+    padding: 2.5px 5px;
+    margin-left: 0.75vw;
+    margin-right: 0.75vw;
+  }
+}
