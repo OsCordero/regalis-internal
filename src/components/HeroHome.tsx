@@ -76,7 +76,7 @@ function HeroHome() {
                 <div>
                   <a
                     className="btn text-white bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-4"
-                    href="#0"
+                    href="#steps"
                   >
                     Learn more
                   </a>
@@ -184,7 +184,7 @@ function HeroHome() {
                   <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0 2C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12z" />
                   <path d="M10 17l6-5-6-5z" />
                 </svg>
-                <span className="ml-3">Watch the full video (2 min)</span>
+                <span className="ml-3">Watch how Regalis works!</span>
               </button>
             </div>
 
