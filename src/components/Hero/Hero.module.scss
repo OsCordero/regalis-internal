@@ -10,8 +10,9 @@
 }
 
 .gift {
-  position: absolute;
-  right: 15vw;
+  height: 35%;
+  width: 35%;
+  float: right;
 }
 
 .hero {
@@ -44,5 +45,37 @@
   .hero.gift {
     height: 30%;
     width: 30%;
+  }
+}
+
+.color {
+  top: 0;
+  text-align: center;
+  height: 95vh;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    white 0%,
+    white 50%,
+    #ffa9a9 50%,
+    #ffa9a9 100%
+  );
+}
+
+@media (max-width: 1080px) {
+  .color {
+    height: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .color {
+    height: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .color {
+    height: 100%;
   }
 }

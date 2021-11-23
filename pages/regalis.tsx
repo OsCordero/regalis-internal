@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import {
   useMoralis,
+<<<<<<< HEAD
   useMoralisQuery,
   useMoralisSubscription,
+=======
+>>>>>>> main
   useMoralisWeb3Api,
   useWeb3ExecuteFunction,
 } from "react-moralis";
@@ -31,6 +34,8 @@ interface DefaultGift {
   3: string;
   4: string;
 }
+
+//  const {Moralis} = useMoralis();
 
 const Regalis = () => {
   const {
