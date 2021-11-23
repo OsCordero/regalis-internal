@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from "react";
 import {
   useMoralis,
-<<<<<<< HEAD
   useMoralisQuery,
   useMoralisSubscription,
-=======
->>>>>>> main
   useMoralisWeb3Api,
   useWeb3ExecuteFunction,
 } from "react-moralis";
 import { abi } from "../src/constants/abi";
-import Moralis from "moralis";
 
 interface NftResult {
   token_address: string;
@@ -49,6 +45,10 @@ const Regalis = () => {
     authenticate,
     logout,
     isWeb3Enabled,
+    environment,
+    Moralis,
+    auth,
+    web3,
   } = useMoralis();
   const Web3Api = useMoralisWeb3Api();
   const { data, error, fetch, isFetching, isLoading } = useWeb3ExecuteFunction({
@@ -70,6 +70,8 @@ const Regalis = () => {
     },
     { autoFetch: true }
   );
+
+  web3?.eth.getChainId().then(console.log);
 
   const {
     data: lastObtained,
@@ -105,9 +107,12 @@ const Regalis = () => {
   const getRandomGift = async () => {
     fetch().then((result: any) => console.log("RESULT", result));
   };
+  console.log(dataNFTS);
 
   useEffect(() => {
     enableWeb3();
+    console.log("isWeb3Enabled", isWeb3Enabled);
+
     if (isWeb3Enabled) {
       fetchNFTS();
       console.log("fetching");

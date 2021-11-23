@@ -1,46 +1,29 @@
-import type { NextPage } from "next";
+import React from "react";
 import Head from "next/head";
+import Header from "../src/components/Header";
+import Footer from "../src/components/Footer";
+import HeroHome from "../src/components/HeroHome";
+import Features from "../src/components/Features";
+// import FeaturesBlocks from "../src/components/FeaturesBlocks";
+import Testimonials from "../src/components/Testimonials";
+import Newsletter from "../src/components/Newsletter";
+import Team from "../src/components/Team";
 
-import OurServices from "../src/components/OurServices/OurServices";
-import Footer from "../src/components/Footer/Footer";
-import Team from "../src/components/Team/Team";
-import Slider from "../src/components/Slider/Slider";
-import { SliderData } from "../src/components/Slider/SliderData";
-
-import { useMoralis } from "react-moralis";
-
-import Link from "next/link";
-import Hero from "../src/components/Hero/Hero";
-import Navbar from "../src/components/Navbar/Navbar";
-// import { useEffect } from "react";
-
-const Home: NextPage = () => {
-  // useEffect(() => {
-  //   alert('Finished loading');
-  // }, [])
-
+export default function landingPage() {
   return (
-    <>
+    <div className="flex flex-col min-h-screen overflow-hidden">
       <Head>
         <title>Regalis</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-
-      <div className="container">
-        {/* <Header /> */}
-        <Navbar />
-        <Hero />
-
-        <OurServices />
-        <Slider slides={SliderData} />
-        <Team />
-        <Footer />
-
-        <Link href="/contactTest">Questions</Link>
-        <Link href="/signin">Sign in</Link>
-      </div>
-    </>
+      <Header />
+      <HeroHome />
+      <Features />
+      {/* <FeaturesBlocks /> */}
+      <Team />
+      <Testimonials />
+      <Newsletter />
+      <Footer />
+    </div>
   );
-};
-
-export default Home;
+}
