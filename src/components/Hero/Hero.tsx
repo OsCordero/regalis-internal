@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Hero.module.scss";
 import Image from "next/image";
 
-export default function Hero() {
+const Hero = () => {
   return (
     <>
       <div className={styles.color}>
@@ -21,4 +21,6 @@ export default function Hero() {
       </div>
     </>
   );
-}
+};
+
+export default Hero;
