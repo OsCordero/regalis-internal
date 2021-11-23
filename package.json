@@ -14,9 +14,7 @@
     "aos": "^2.3.4",
     "axios": "^0.24.0",
     "dotenv": "^10.0.0",
-
     "moralis": "^0.0.132",
-
     "next": "12.0.3",
     "nodemailer": "^6.7.0",
     "react": "17.0.2",
@@ -24,7 +22,6 @@
     "react-hook-form": "^7.19.4",
     "react-icons": "^4.3.1",
     "react-moralis": "^0.2.8",
-    "react-router-dom": "^6.0.2",
     "react-transition-group": "^4.4.2",
     "sass": "^1.43.4"
   },

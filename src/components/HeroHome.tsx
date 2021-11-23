@@ -189,24 +189,24 @@ function HeroHome() {
             </div>
 
             {/* Modal */}
-            <Modal
-              id="modal"
-              ariaLabel="modal-headline"
-              show={videoModalOpen}
-              handleClose={() => setVideoModalOpen(false)}
-            >
-              <div className="relative pb-9/16">
-                <iframe
-                  className="absolute w-full h-full"
-                  src="https://player.vimeo.com/video/174002812"
-                  title="Video"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </Modal>
           </div>
         </div>
       </div>
+      <Modal
+        id="modal"
+        ariaLabel="modal-headline"
+        show={videoModalOpen}
+        handleClose={() => setVideoModalOpen(false)}
+      >
+        <div className="relative pb-9/16">
+          <iframe
+            className="absolute w-full h-full"
+            src="https://player.vimeo.com/video/174002812"
+            title="Video"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </Modal>
     </section>
   );
 }
