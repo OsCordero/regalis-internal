@@ -6,15 +6,15 @@ import PrimaryButton from "./Buttons/PrimaryButton";
 export default function GetGift() {
   const { error, fetch, isFetching, isLoading } = useGetGift();
   const [modal, setModal] = useState(false);
+  const isRejected = error?.message.includes("User denied");
+  const isNoMetamask = error?.message.includes("Missing web3 instance");
 
   const getRandomGift = async () => {
-    fetch()
-      .then((result: any) => {
-        if (result) {
-          setModal(true);
-        }
-      })
-      .catch((err) => console.log(err));
+    fetch().then((result: any) => {
+      if (result) {
+        setModal(true);
+      }
+    });
   };
 
   return (
@@ -54,14 +54,21 @@ export default function GetGift() {
               </PrimaryButton>
             </div>
             {(isFetching || isLoading) && (
-              <p>{"We're making your order, this can take up to 30 seconds"}</p>
+              <p className="mt-2">
+                {"We're making your order, this can take up to 30 seconds"}
+              </p>
             )}
-            {error?.message.includes("User denied") && (
+            {isRejected && (
               <p className="text-red-500 text-lg mt-2">
                 You have to accept the transaction! please try again.
               </p>
             )}
-            {error && !error.message.includes("User denied") && (
+            {isNoMetamask && (
+              <p className="text-red-500 text-lg mt-2">
+                You need to connect to metamask! please connect and try again.
+              </p>
+            )}
+            {error && !isRejected && !isNoMetamask && (
               <p className="text-red-500 text-lg mt-2">
                 Oh no, something went wrong, please try again.
               </p>
@@ -82,7 +89,7 @@ export default function GetGift() {
               >
                 <path
                   strokeLinecap="round"
-                  stroke-Linejoin="round"
+                  strokeLinejoin="round"
                   strokeWidth="2"
                   d="M5 13l4 4L19 7"
                 ></path>
