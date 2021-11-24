@@ -30,7 +30,13 @@ function Header() {
             {/* Logo */}
             <Link href="/" passHref aria-label="Cruip">
               <a className="block">
-                <img src="/Regalis2.png" alt="Regalis" width="96" height="96" />
+                <img
+                  src="/Regalis2.png"
+                  alt="Regalis"
+                  width="100"
+                  height="100"
+                  className="md:w-75 md:h-75"
+                />
                 {/* <svg
                   className="w-8 h-8"
                   viewBox="0 0 32 32"
@@ -76,7 +82,7 @@ function Header() {
               {!isAuthenticated ? (
                 <li>
                   <Link href="/login">
-                    <a className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
+                    <a className="btn-sm text-gray-800 bg-gray-300 hover:bg-gray-800 hover:text-gray-300 ml-3">
                       Sign in
                       <svg
                         className="w-3 h-3 fill-current text-gray-400 flex-shrink-0 ml-2 -mr-1"

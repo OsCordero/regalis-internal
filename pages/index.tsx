@@ -8,6 +8,7 @@ import Features from "../src/components/Features";
 import Testimonials from "../src/components/Testimonials";
 import Newsletter from "../src/components/Newsletter";
 import Team from "../src/components/Team";
+import Faqs from "../src/components/Faqs";
 
 export default function landingPage() {
   return (
@@ -20,6 +21,7 @@ export default function landingPage() {
       <HeroHome />
       <Features />
       {/* <FeaturesBlocks /> */}
+      <Faqs />
       <Team />
       <Testimonials />
       <Newsletter />
