@@ -5,6 +5,8 @@ import PrimaryButton from "../src/components/Buttons/PrimaryButton";
 import Header from "../src/components/Header";
 import { abi } from "../src/constants/abi";
 import Modal from "../src/utils/Modal";
+import Link from "next/link";
+import Layout from "../src/components/Layout";
 
 const Dashboard = () => {
   const [showAlert, setShowAlert] = useState(false);
@@ -34,7 +36,7 @@ const Dashboard = () => {
   }, [isWeb3Enabled, web3?.eth]);
 
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
+    <Layout>
       <Header />
 
       <Modal
@@ -109,12 +111,14 @@ const Dashboard = () => {
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque rem aperiam, eaque ipsa quae.
             </p>
-            <button
-              type="button"
-              className="py-4 px-6 max-w-sm	mt-10 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full"
-            >
-              Get Yours
-            </button>
+            <Link href="/getGift">
+              <a
+                type="button"
+                className="py-4 px-6 max-w-sm	mt-10 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full"
+              >
+                Get Yours
+              </a>
+            </Link>
           </div>
 
           <div className="grid gap-5 gap-y-11 mb-8 lg:grid-cols-4 sm:grid-cols-2">
@@ -147,7 +151,7 @@ const Dashboard = () => {
           </div>
         </div>
       </section>
-    </div>
+    </Layout>
   );
 };
 
