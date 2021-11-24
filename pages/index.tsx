@@ -23,7 +23,7 @@ export default function landingPage() {
       {/* <FeaturesBlocks /> */}
       <Faqs />
       <Team />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Newsletter />
       <Footer />
     </div>
