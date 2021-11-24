@@ -31,7 +31,7 @@ export default function GetGift() {
             </p>
             <div className="flex items-center">
               <a
-                className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0"
+                className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0"
                 href="/dashboard"
               >
                 Get your Gift!
