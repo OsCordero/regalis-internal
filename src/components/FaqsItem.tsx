@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const FaqsItem = ({ title, children }) => {
+const FaqsItem: React.FC<{ title: string }> = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="border-b">
