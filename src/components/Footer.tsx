@@ -17,18 +17,6 @@ function Footer() {
                 </a>
               </Link>
             </div>
-            <div className="text-sm text-gray-600">
-              <Link href="#" passHref>
-                <a className="text-gray-600 hover:text-gray-900 hover:underline transition duration-150 ease-in-out">
-                  Made by
-                </a>
-              </Link>{" "}
-              <Link href="#" passHref>
-                <a className="text-gray-600 hover:text-gray-900 hover:underline transition duration-150 ease-in-out">
-                  Zingiber Labs
-                </a>
-              </Link>
-            </div>
           </div>
 
           <div className=" lg:col-span-2">
@@ -40,23 +28,23 @@ function Footer() {
           </div>
 
           <div className=" lg:col-span-2">
-            <Link href="/#steps" passHref>
+            <Link href="/contactPage" passHref>
               <a className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out mt-10">
-                <p className=" mt-10"> Guide</p>
+                <p className=" mt-10"> Contact us</p>
               </a>
             </Link>
           </div>
 
-          <div className=" lg:col-span-2">
+          {/* <div className=" lg:col-span-2">
             <Link href="/#faqs" passHref>
               <a className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out mt-10">
                 <p className=" mt-10"> FAQs</p>
               </a>
             </Link>
-          </div>
+          </div> */}
 
           <div className=" lg:col-span-2">
-            <Link href="#" passHref>
+            <Link href="https://twitter.com/regalisofficial" passHref>
               <a className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out mt-10">
                 <p className=" mt-10"> Twitter</p>
               </a>
@@ -64,7 +52,10 @@ function Footer() {
           </div>
 
           <div className=" lg:col-span-1">
-            <Link href="#" passHref>
+            <Link
+              href="https://discord.com/channels/909508157619970128/909508157619970131"
+              passHref
+            >
               <a className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out mt-10">
                 <p className=" mt-10"> Discord</p>
               </a>

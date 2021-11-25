@@ -6,6 +6,8 @@ import {
   useMoralisWeb3Api,
   useWeb3ExecuteFunction,
 } from "react-moralis";
+import Footer from "../src/components/Footer";
+import Header from "../src/components/Header";
 import { abi } from "../src/constants/abi";
 
 interface NftResult {
@@ -71,7 +73,7 @@ const Regalis = () => {
     { autoFetch: true }
   );
 
-  web3?.eth.getChainId().then(console.log);
+  // web3?.eth.getChainId().then(console.log);
 
   const {
     data: lastObtained,
@@ -114,6 +116,7 @@ const Regalis = () => {
     console.log("isWeb3Enabled", isWeb3Enabled);
 
     if (isWeb3Enabled) {
+      web3?.eth.getChainId().then(console.log);
       fetchNFTS();
       console.log("fetching");
     }
@@ -121,7 +124,13 @@ const Regalis = () => {
 
   return (
     <div>
-      <h1>Regalis</h1>
+      <Header />
+      <br />
+      <br />
+
+      <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+        <span className="relative">Regalis</span>
+      </h2>
       <h2>Get your gift</h2>
       {isAuthenticated ? (
         <>
@@ -185,6 +194,9 @@ const Regalis = () => {
           </li>
         ))}
       </ul>
+      <br />
+      <br />
+      <Footer />
     </div>
   );
 };

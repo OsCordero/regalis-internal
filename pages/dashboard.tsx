@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { FaExclamationTriangle } from "react-icons/fa";
+// import { FaExclamationTriangle } from "react-icons/fa";
 import { useMoralis, useWeb3ExecuteFunction } from "react-moralis";
 import PrimaryButton from "../src/components/Buttons/PrimaryButton";
 import Header from "../src/components/Header";
+import Footer from "../src/components/Footer";
 import { abi } from "../src/constants/abi";
 import Modal from "../src/utils/Modal";
 
@@ -46,7 +47,7 @@ const Dashboard = () => {
         <div className="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-800 w-96 m-auto">
           <div className="w-full h-full text-center">
             <div className="flex h-full flex-col justify-between">
-              <FaExclamationTriangle className="mt-4 w-12 h-12 m-auto text-blue-600" />
+              {/* <FaExclamationTriangle className="mt-4 w-12 h-12 m-auto text-blue-600" /> */}
               <p className="text-gray-800 dark:text-gray-200 text-xl font-bold mt-4">
                 Whoops, wrong chain!
               </p>
@@ -109,12 +110,22 @@ const Dashboard = () => {
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque rem aperiam, eaque ipsa quae.
             </p>
-            <button
+            {/* <button
               type="button"
-              className="py-4 px-6 max-w-sm	mt-10 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full"
+              className="py-4 px-6 max-w-sm	mt-10 bg-purple-600 hover:bg-purple-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full"
             >
               Get Yours
-            </button>
+            </button> */}
+            <br />
+            <br />
+            <div>
+              <a
+                className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0"
+                href="/getGift"
+              >
+                Get your NFT
+              </a>
+            </div>
           </div>
 
           <div className="grid gap-5 gap-y-11 mb-8 lg:grid-cols-4 sm:grid-cols-2">
@@ -147,6 +158,7 @@ const Dashboard = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

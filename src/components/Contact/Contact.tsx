@@ -138,19 +138,16 @@ export default function ContactTest() {
               />
               <span className={styles.span}>{errors?.message?.message}</span>
             </div>
-
+            <br />
             <div className="max-w-3xl mx-auto">
               <div className={styles.centerbtn}>
-                <a
+                <input
+                  type="submit"
+                  value="Send Message"
                   className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0"
-                  href="/getGift"
-                >
-                  Get your NFT
-                </a>
+                />
               </div>
             </div>
-
-            {/* <input type="submit" value="Send" className={styles.send} /> */}
           </form>
         </div>
       </div>

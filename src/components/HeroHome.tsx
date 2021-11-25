@@ -70,17 +70,17 @@ function HeroHome() {
                     className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0"
                     href="/getGift"
                   >
-                    Get your NFT
+                    Get your Regalis
                   </a>
                 </div>
-                <div>
+                {/* <div>
                   <a
                     className="btn text-white bg-purple-600 hover:bg-purple-700 w-full sm:w-auto sm:ml-4"
                     href="/#steps"
                   >
                     How do i get a Regalis?
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

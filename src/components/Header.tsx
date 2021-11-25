@@ -72,17 +72,25 @@ function Header() {
           {/* Site navigation */}
           <nav className="flex flex-grow">
             <ul className="flex flex-grow justify-end flex-wrap items-center">
-              <li>
+              {/* <li>
                 <Link href="/dashboard">
                   <a className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 mr-3 flex items-center transition duration-150 ease-in-out">
                     Dashboard
+                  </a>
+                </Link>
+              </li> */}
+
+              <li>
+                <Link href="/contactPage">
+                  <a className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 mr-3 flex items-center transition duration-150 ease-in-out">
+                    Contact us
                   </a>
                 </Link>
               </li>
               {!isAuthenticated ? (
                 <li>
                   <Link href="/login">
-                    <a className="btn-sm text-gray-800 bg-gray-300 hover:bg-gray-800 hover:text-gray-300 ml-3">
+                    <a className="btn-sm text-gray-800 bg-gray-300 hover:bg-purple-700 hover:text-gray-300 ml-3">
                       Sign in
                       <svg
                         className="w-3 h-3 fill-current text-gray-400 flex-shrink-0 ml-2 -mr-1"

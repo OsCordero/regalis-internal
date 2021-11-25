@@ -3,7 +3,7 @@ import Contact from "../src/components/Contact/Contact";
 import Footer from "../src/components/Footer";
 import Header from "../src/components/Header";
 
-export default function ContactTest() {
+export default function ContactPage() {
   return (
     <>
       <Header />
