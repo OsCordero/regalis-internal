@@ -8,7 +8,7 @@ import {
 } from "react-moralis";
 import { abi } from "../src/constants/abi";
 
-export default function profileTest() {
+export default function ProfileTest() {
   const {
     signup,
     isInitialized,

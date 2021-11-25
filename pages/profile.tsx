@@ -3,7 +3,6 @@ import {
   useMoralis,
   useWeb3ExecuteFunction,
   useMoralisQuery,
-  ByMoralis,
 } from "react-moralis";
 import PrimaryButton from "../src/components/Buttons/PrimaryButton";
 import Header from "../src/components/Header";
@@ -11,7 +10,7 @@ import { abi } from "../src/constants/abi";
 import Modal from "../src/utils/Modal";
 import Footer from "../src/components/Footer";
 
-export default function profile() {
+export default function Profile() {
   const [showAlert, setShowAlert] = useState(false);
 
   const { data, fetch } = useWeb3ExecuteFunction(
@@ -132,7 +131,7 @@ export default function profile() {
                 your Regalis!
               </h2>
               <p className="text-base text-gray-700 md:text-lg">
-                This is your collection of Regalis NFT's
+                {"This is your collection of Regalis NFT's"}
               </p>
               {/* <button
                 type="button"
@@ -180,7 +179,7 @@ export default function profile() {
                       .characterIndex
                   ]?.[2]
                 }`}
-                // alt={"Blabla"}
+                alt="Last obtained"
                 style={{ maxWidth: "200px" }}
               />
             )}
@@ -189,9 +188,11 @@ export default function profile() {
                 {lastObtained.map((myNft) => {
                   return (
                     <img
+                      key={myNft.id}
                       src={`https://cloudflare-ipfs.com/ipfs/${
                         myData[myNft.attributes.characterIndex].imageURI
                       }`}
+                      alt="my regalis"
                     />
                   );
                 })}
