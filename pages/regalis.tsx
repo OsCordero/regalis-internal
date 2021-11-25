@@ -106,6 +106,8 @@ const Regalis = () => {
     }
   );
 
+  console.log("LAST OBTAINED", lastObtained);
+
   const getRandomGift = async () => {
     fetch().then((result: any) => console.log("RESULT", result));
   };

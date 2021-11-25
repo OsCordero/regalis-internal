@@ -3,6 +3,7 @@ import {
   useMoralis,
   useWeb3ExecuteFunction,
   useMoralisQuery,
+  ByMoralis,
 } from "react-moralis";
 import PrimaryButton from "../src/components/Buttons/PrimaryButton";
 import Header from "../src/components/Header";
@@ -22,6 +23,7 @@ export default function profile() {
     { autoFetch: true }
   );
 
+  const myData: any = data;
   interface DefaultGift {
     0: string;
     1: string;
@@ -62,20 +64,7 @@ export default function profile() {
     [user?.get("ethAddress")],
     { live: true }
   );
-
-  const {
-    data: dataNFTS,
-    fetch: fetchNFTS,
-    isFetching: isFetchinNFTS,
-    isLoading: isLoadingNFTS,
-  } = useWeb3ExecuteFunction(
-    {
-      abi: abi,
-      contractAddress: process.env.NEXT_PUBLIC_REGALIS_NFT_CONTRACT_ADDRESS,
-      functionName: "getAllDefaultCharacters",
-    },
-    { autoFetch: true }
-  );
+  console.log(lastObtained);
 
   useEffect(() => {
     enableWeb3();
@@ -176,15 +165,17 @@ export default function profile() {
               ))}
             </div> */}
 
+            {console.log(data)}
+
             {(isLoadingLastObtained || isFetchingLastObtained) &&
             lastObtained.length <= 0 &&
-            dataNFTS ? (
+            data ? (
               <p>Loading...</p>
             ) : (
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={`https://cloudflare-ipfs.com/ipfs/${
-                  (dataNFTS as any)?.[
+                  (data as any)?.[
                     lastObtained[lastObtained.length - 1]?.attributes
                       .characterIndex
                   ]?.[2]
@@ -193,26 +184,23 @@ export default function profile() {
                 style={{ maxWidth: "200px" }}
               />
             )}
-
-            {/* <h1>Your Gift NFT's</h1> */}
-            <ul
-              style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)" }}
-            >
-              {(dataNFTS as DefaultGift[])?.map((nft) => (
-                <li key={nft[0]}>
-                  <h1 style={{ fontSize: "1rem" }}>{nft[1]}</h1>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={`https://cloudflare-ipfs.com/ipfs/${nft[2]}`}
-                    alt={nft[0]}
-                    style={{ maxWidth: "200px" }}
-                  />
-                </li>
-              ))}
-            </ul>
+            {data && (
+              <div>
+                {lastObtained.map((myNft) => {
+                  return (
+                    <img
+                      src={`https://cloudflare-ipfs.com/ipfs/${
+                        myData[myNft.attributes.characterIndex].imageURI
+                      }`}
+                    />
+                  );
+                })}
+              </div>
+            )}
           </div>
         </section>
       </div>
+
       <Footer />
     </>
   );

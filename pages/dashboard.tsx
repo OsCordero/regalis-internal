@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import { FaExclamationTriangle } from "react-icons/fa";
+import { FaExclamationTriangle } from "react-icons/fa";
 import { useMoralis, useWeb3ExecuteFunction } from "react-moralis";
 import PrimaryButton from "../src/components/Buttons/PrimaryButton";
 import Header from "../src/components/Header";
@@ -47,7 +47,7 @@ const Dashboard = () => {
         <div className="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-800 w-96 m-auto">
           <div className="w-full h-full text-center">
             <div className="flex h-full flex-col justify-between">
-              {/* <FaExclamationTriangle className="mt-4 w-12 h-12 m-auto text-blue-600" /> */}
+              <FaExclamationTriangle className="mt-4 w-12 h-12 m-auto text-blue-600" />
               <p className="text-gray-800 dark:text-gray-200 text-xl font-bold mt-4">
                 Whoops, wrong chain!
               </p>
