@@ -54,15 +54,13 @@ export default function ContactTest() {
         </h1>
       </div>
       <br />
-      <div className={styles.shadow}>
+      <div className="shadow-2xl max-w-4xl mx-auto rounded-3xl ">
         <div>
-          <div className={styles.container}>
-            <form className={styles.main} onSubmit={handleSubmit(onSubmitForm)}>
+          <div className="px-8 py-10 md:p-20 ">
+            <form className="w-full" onSubmit={handleSubmit(onSubmitForm)}>
               <br />
               <div className={styles.inputGroup}>
-                <label htmlFor="name" className={styles.label}>
-                  Name:
-                </label>
+                <label htmlFor="name">Name:</label>
                 <input
                   type="text"
                   id="name"
@@ -73,7 +71,7 @@ export default function ContactTest() {
                       message: "This name is too short",
                     },
                     maxLength: {
-                      value: 30,
+                      value: 50,
                       message: "This name is too long",
                     },
                   })}
@@ -81,14 +79,12 @@ export default function ContactTest() {
                   autoComplete="off"
                   autoFocus
                   name="name"
-                  className={`${styles.inputField} border rounded-lg focus:shadow-outline`}
+                  className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full sm:w-96 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                 />
                 <span className={styles.span}>{errors?.name?.message}</span>
               </div>
               <div className={styles.inputGroup}>
-                <label htmlFor="email" className={styles.label}>
-                  Email:
-                </label>
+                <label htmlFor="email">Email:</label>
                 <input
                   type="text"
                   id="email"
@@ -107,18 +103,16 @@ export default function ContactTest() {
                       message: "Invalid email address",
                     },
                   })}
+                  className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full sm:w-96 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                   placeholder="example@email.com"
                   autoComplete="off"
                   name="email"
-                  className={`${styles.inputField} border rounded-lg focus:shadow-outline`}
                 />
 
                 <span className={styles.span}>{errors?.email?.message}</span>
               </div>
               <div className={styles.inputGroup}>
-                <label htmlFor="message" className={styles.label}>
-                  Message:
-                </label>
+                <label htmlFor="message">Message:</label>
                 <textarea
                   id="message"
                   {...register("message", {
@@ -136,7 +130,7 @@ export default function ContactTest() {
                   autoComplete="off"
                   minLength={20}
                   name="message"
-                  className={`${styles.textArea} border rounded-lg focus:shadow-outline`}
+                  className="flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                 />
                 <span className={styles.span}>{errors?.message?.message}</span>
               </div>
@@ -149,8 +143,6 @@ export default function ContactTest() {
                     className="btn text-white bg-purple-600 self-center hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0"
                   />
                 </div>
-                <br />
-                <br />
               </div>
             </form>
           </div>
