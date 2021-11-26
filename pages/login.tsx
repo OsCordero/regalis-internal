@@ -6,7 +6,8 @@ import PrimaryButton from "../src/components/Buttons/PrimaryButton";
 import Header from "../src/components/Header";
 
 const Login = () => {
-  const { authenticate, isAuthenticated, isAuthenticating } = useMoralis();
+  const { authenticate, isAuthenticated, isAuthenticating, authError } =
+    useMoralis();
   const router = useRouter();
 
   if (isAuthenticated) {
@@ -36,6 +37,13 @@ const Login = () => {
             >
               Connect with metamask
             </PrimaryButton>
+            {authError?.message.includes(
+              "Request of type 'wallet_requestPermissions' already pending"
+            ) && (
+              <p className="text-red-500 text-sm mt-2">
+                You have a pending request on your metamask, please check it.
+              </p>
+            )}
           </div>
         </div>
       </div>

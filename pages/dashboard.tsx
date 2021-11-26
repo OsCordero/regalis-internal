@@ -6,6 +6,8 @@ import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import { abi } from "../src/constants/abi";
 import Modal from "../src/utils/Modal";
+import Link from "next/link";
+import Layout from "../src/components/Layout";
 
 const Dashboard = () => {
   const [showAlert, setShowAlert] = useState(false);
@@ -35,7 +37,7 @@ const Dashboard = () => {
   }, [isWeb3Enabled, web3?.eth]);
 
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
+    <Layout>
       <Header />
 
       <Modal
@@ -85,16 +87,21 @@ const Dashboard = () => {
               are all the available Regalis
             </h2>
 
+
             <br />
             <br />
             <div>
+              
+              <Link href="/getGift">
               <a
-                className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0"
-                href="/getGift"
+                type="button"
+                className="py-4 px-6 max-w-sm	mt-10 bg-purple-600 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full"
               >
-                Get your NFT
+                Get Yours
               </a>
+            </Link>
             </div>
+
           </div>
 
           <div className="grid gap-5 gap-y-11 mb-8 lg:grid-cols-4 sm:grid-cols-2">
@@ -127,8 +134,12 @@ const Dashboard = () => {
           </div>
         </div>
       </section>
-      <Footer />
+
+
     </div>
+
+    </Layout>
+
   );
 };
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "../utils/Modal";
+import Link from "next/link";
 
 function HeroHome() {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
@@ -66,12 +67,16 @@ function HeroHome() {
                 data-aos-delay="300"
               >
                 <div>
-                  <a
-                    className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0"
-                    href="/getGift"
-                  >
-                    Get your Regalis
-                  </a>
+
+                  <Link href="/getGift">
+                    <a
+                      href=""
+                      className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0"
+                    >
+                      Get your NFT
+                    </a>
+                  </Link>
+
                 </div>
                 {/* <div>
                   <a
