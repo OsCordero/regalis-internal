@@ -11,7 +11,7 @@ import { abi } from "../src/constants/abi";
 import Modal from "../src/utils/Modal";
 import Footer from "../src/components/Footer";
 
-export default function profile() {
+export default function Profile() {
   const [showAlert, setShowAlert] = useState(false);
 
   const { data, fetch } = useWeb3ExecuteFunction(
