@@ -110,12 +110,14 @@ function Header() {
                       leaveEnd="opacity-0 -translate-y-1"
                     >
                       <div className="absolute right-0 z-20 w-48 py-2 mt-2 bg-white rounded-md shadow-xl dark:bg-gray-800">
-                        <a
-                          href="/profile"
-                          className="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
-                        >
-                          Your profile
-                        </a>
+                        <Link href="/profile">
+                          <a
+                            href="/profile"
+                            className="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+                          >
+                            Your profile
+                          </a>
+                        </Link>
                         <button
                           onClick={logout}
                           className="block w-full text-left px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"

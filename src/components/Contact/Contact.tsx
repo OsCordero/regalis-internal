@@ -49,7 +49,7 @@ export default function ContactTest() {
       </Head>
 
       <div className={styles.center}>
-        <h1 className="text-5xl center md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4">
+        <h1 className="text-2xl center md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4">
           Contact us!
         </h1>
       </div>
