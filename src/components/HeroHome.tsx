@@ -58,8 +58,8 @@ function HeroHome() {
                 data-aos="zoom-y-out"
                 data-aos-delay="150"
               >
-                Our landing page template works on all devices, so you only have
-                to set it up once, and get beautiful results forever.
+                Regalis is a surprise box that has a random NFT gift on the
+                inside, with holiday themes that you can collect. Get yours now!
               </p>
               <div
                 className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center"
@@ -67,6 +67,7 @@ function HeroHome() {
                 data-aos-delay="300"
               >
                 <div>
+
                   <Link href="/getGift">
                     <a
                       href=""
@@ -75,15 +76,16 @@ function HeroHome() {
                       Get your NFT
                     </a>
                   </Link>
+
                 </div>
-                <div>
+                {/* <div>
                   <a
                     className="btn text-white bg-purple-600 hover:bg-purple-700 w-full sm:w-auto sm:ml-4"
                     href="/#steps"
                   >
                     How do i get a Regalis?
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

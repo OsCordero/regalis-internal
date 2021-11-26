@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import FaqsItem from "./FaqsItem";
 
 export default function Faqs() {

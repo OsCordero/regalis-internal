@@ -44,17 +44,25 @@ function Header() {
           {/* Site navigation */}
           <nav className="flex flex-grow">
             <ul className="flex flex-grow justify-end flex-wrap items-center">
-              <li>
+              {/* <li>
                 <Link href="/dashboard">
                   <a className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 mr-3 flex items-center transition duration-150 ease-in-out">
                     Dashboard
+                  </a>
+                </Link>
+              </li> */}
+
+              <li>
+                <Link href="/contactPage">
+                  <a className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 mr-3 flex items-center transition duration-150 ease-in-out">
+                    Contact us
                   </a>
                 </Link>
               </li>
               {!isAuthenticated ? (
                 <li>
                   <Link href="/login">
-                    <a className="btn-sm text-gray-800 bg-gray-300 hover:bg-gray-800 hover:text-gray-300 ml-3">
+                    <a className="btn-sm text-gray-800 bg-gray-300 hover:bg-purple-700 hover:text-gray-300 ml-3">
                       Sign in
                       <svg
                         className="w-3 h-3 fill-current text-gray-400 flex-shrink-0 ml-2 -mr-1"
@@ -102,12 +110,14 @@ function Header() {
                       leaveEnd="opacity-0 -translate-y-1"
                     >
                       <div className="absolute right-0 z-20 w-48 py-2 mt-2 bg-white rounded-md shadow-xl dark:bg-gray-800">
-                        <a
-                          href="#"
-                          className="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
-                        >
-                          your profile
-                        </a>
+                        <Link href="/profile">
+                          <a
+                            href="/profile"
+                            className="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
+                          >
+                            Your profile
+                          </a>
+                        </Link>
                         <button
                           onClick={logout}
                           className="block w-full text-left px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"

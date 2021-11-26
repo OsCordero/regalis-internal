@@ -3,12 +3,7 @@ import Head from "next/head";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import HeroHome from "../src/components/HeroHome";
-import Features from "../src/components/Features";
-// import FeaturesBlocks from "../src/components/FeaturesBlocks";
-import Testimonials from "../src/components/Testimonials";
-import Newsletter from "../src/components/Newsletter";
-import Team from "../src/components/Team";
-import Faqs from "../src/components/Faqs";
+import Tech from "../src/components/Tech";
 
 export default function landingPage() {
   return (
@@ -19,12 +14,7 @@ export default function landingPage() {
       </Head>
       <Header />
       <HeroHome />
-      <Features />
-      {/* <FeaturesBlocks /> */}
-      <Faqs />
-      <Team />
-      {/* <Testimonials /> */}
-      <Newsletter />
+      <Tech />
       <Footer />
     </div>
   );
