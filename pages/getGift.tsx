@@ -1,17 +1,12 @@
 import React from "react";
-import Header from "../src/components/Header";
-import Footer from "../src/components/Footer";
-import GetGift from "../src/components/GetGift";
+import GetGiftComponent from "../src/components/GetGift";
+import Layout from "../src/components/Layout";
 
-export default function getGift() {
+export default function GetGift() {
   return (
-    <>
-      <Header />
-      <br />
-      <br />
-      <br />
-      <GetGift />
-      <Footer />
-    </>
+    <Layout>
+      <div />
+      <GetGiftComponent />
+    </Layout>
   );
 }
