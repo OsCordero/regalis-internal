@@ -45,7 +45,10 @@ function Footer() {
 
           <div className=" lg:col-span-2">
             <Link href="https://twitter.com/regalisofficial" passHref>
-              <a className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out mt-10">
+              <a
+                className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out mt-10"
+                target="_blank"
+              >
                 <p className=" mt-10"> Twitter</p>
               </a>
             </Link>
@@ -56,7 +59,10 @@ function Footer() {
               href="https://discord.com/channels/909508157619970128/909508157619970131"
               passHref
             >
-              <a className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out mt-10">
+              <a
+                className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out mt-10"
+                target="_blank"
+              >
                 <p className=" mt-10"> Discord</p>
               </a>
             </Link>

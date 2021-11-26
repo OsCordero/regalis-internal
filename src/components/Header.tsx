@@ -139,10 +139,10 @@ function Header() {
                     >
                       <div className="absolute right-0 z-20 w-48 py-2 mt-2 bg-white rounded-md shadow-xl dark:bg-gray-800">
                         <a
-                          href="#"
+                          href="/profile"
                           className="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
                         >
-                          your profile
+                          Your profile
                         </a>
                         <button
                           onClick={logout}

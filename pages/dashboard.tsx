@@ -80,42 +80,11 @@ const Dashboard = () => {
 
             <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
               <span className="relative inline-block">
-                <svg
-                  viewBox="0 0 52 24"
-                  fill="currentColor"
-                  className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
-                >
-                  <defs>
-                    <pattern
-                      id="7b568941-9ed0-4f49-85a0-5e21ca6c7ad6"
-                      x="0"
-                      y="0"
-                      width=".135"
-                      height=".30"
-                    >
-                      <circle cx="1" cy="1" r=".7" />
-                    </pattern>
-                  </defs>
-                  <rect
-                    fill="url(#7b568941-9ed0-4f49-85a0-5e21ca6c7ad6)"
-                    width="52"
-                    height="24"
-                  />
-                </svg>
-                <span className="relative">The</span>
+                <span className="relative">These</span>
               </span>{" "}
-              quick, brown fox jumps over a lazy dog
+              are all the available Regalis
             </h2>
-            <p className="text-base text-gray-700 md:text-lg">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque rem aperiam, eaque ipsa quae.
-            </p>
-            {/* <button
-              type="button"
-              className="py-4 px-6 max-w-sm	mt-10 bg-purple-600 hover:bg-purple-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full"
-            >
-              Get Yours
-            </button> */}
+
             <br />
             <br />
             <div>
@@ -140,7 +109,7 @@ const Dashboard = () => {
                   alt="Gift"
                 />
 
-                <div className="w-56 -mt-10 absolute -bottom-4 overflow-hidden bg-pink-500 text-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
+                <div className="w-56 -mt-10 absolute -bottom-4 overflow-hidden bg-purple-600 text-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
                   <h3 className="py-2 font-bold tracking-wide text-center text-white uppercase dark:text-white">
                     {nft[1]}
                   </h3>

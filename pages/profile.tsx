@@ -50,10 +50,10 @@ export default function profile() {
   } = useMoralis();
 
   const {
-    data: lastObtained,
-    error: errorLastObtained,
-    isLoading: isLoadingLastObtained,
-    isFetching: isFetchingLastObtained,
+    data: dataObtained,
+    error: errordataObtained,
+    isLoading: isLoadingdataObtained,
+    isFetching: isFetchingdataObtained,
   } = useMoralisQuery(
     "CharacterNFTMinted",
     (query) => {
@@ -64,7 +64,7 @@ export default function profile() {
     [user?.get("ethAddress")],
     { live: true }
   );
-  console.log(lastObtained);
+  console.log(dataObtained);
 
   useEffect(() => {
     enableWeb3();
@@ -132,7 +132,9 @@ export default function profile() {
                 your Regalis!
               </h2>
               <p className="text-base text-gray-700 md:text-lg">
-                This is your collection of Regalis NFT's
+                {`Hey! ${user?.get(
+                  "ethAddress"
+                )} This is your collection of Regalis NFT's`}
               </p>
               {/* <button
                 type="button"
@@ -167,32 +169,56 @@ export default function profile() {
 
             {console.log(data)}
 
-            {(isLoadingLastObtained || isFetchingLastObtained) &&
-            lastObtained.length <= 0 &&
+            {/* {(isLoadingdataObtained || isFetchingdataObtained) &&
+            dataObtained.length <= 0 &&
             data ? (
               <p>Loading...</p>
             ) : (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={`https://cloudflare-ipfs.com/ipfs/${
-                  (data as any)?.[
-                    lastObtained[lastObtained.length - 1]?.attributes
-                      .characterIndex
-                  ]?.[2]
-                }`}
-                // alt={"Blabla"}
-                style={{ maxWidth: "200px" }}
-              />
-            )}
-            {data && (
               <div>
-                {lastObtained.map((myNft) => {
+                <h3 className="text-center">This is your last minted NFT</h3>
+                <div className="relative flex flex-col items-center justify-center max-w-sm mx-auto shadow-xl">
+                  <img
+                    className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
+                    src={`https://cloudflare-ipfs.com/ipfs/${
+                      (data as any)?.[
+                        dataObtained[dataObtained.length - 1]?.attributes
+                          .characterIndex
+                      ]?.[2]
+                    }`}
+                    // alt={"Blabla"}
+                    // style={{ maxWidth: "200px" }}
+                  />
+                </div>
+              </div>
+            )} */}
+
+            <br />
+            {data && (
+              <div className="grid gap-5 gap-y-11 mb-8 lg:grid-cols-4 sm:grid-cols-2">
+                {(dataObtained as any)?.map((myNft: any) => {
                   return (
-                    <img
-                      src={`https://cloudflare-ipfs.com/ipfs/${
-                        myData[myNft.attributes.characterIndex].imageURI
-                      }`}
-                    />
+                    <>
+                      <div>
+                        <div className="relative flex flex-col items-center justify-center max-w-sm mx-auto shadow-xl">
+                          <img
+                            className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-lg"
+                            src={`https://cloudflare-ipfs.com/ipfs/${
+                              myData[myNft.attributes.characterIndex].imageURI
+                            }`}
+                            alt="Gift"
+                          />
+                          <div className="w-56 -mt-10 absolute -bottom-4 overflow-hidden bg-purple-600 text-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
+                            <h3 className="py-2 font-bold tracking-wide text-center text-white uppercase dark:text-white">
+                              {myData[myNft.attributes.characterIndex].name}
+                            </h3>
+                          </div>
+                        </div>
+                        <br />
+
+                        <p className="text-center">{`Purchase date: ${myNft.attributes.createdAt.toDateString()}`}</p>
+                        {console.log(myNft.attributes.block_timestamp)}
+                      </div>
+                    </>
                   );
                 })}
               </div>

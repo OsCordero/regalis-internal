@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function Tech() {
   return (
@@ -11,32 +12,48 @@ export default function Tech() {
         <br />
         <div className="grid grid-cols-2 gap-24 mb-16 text-center lg:grid-cols-4">
           <div className="flex items-center justify-center">
-            <img
-              src="/logos/moralis-logo.png"
-              alt="Moralis Logo"
-              className="block object-contain h-24"
-            />
+            <Link href="https://polygon.technology/" passHref>
+              <a target="_blank">
+                <img
+                  src="/logos/moralis-logo.png"
+                  alt="Moralis Logo"
+                  className="block object-contain h-24"
+                />
+              </a>
+            </Link>
           </div>
           <div className="flex items-center justify-center">
-            <img
-              src="/logos/chainlink-logo.png"
-              alt="Chainlink Logo"
-              className="block object-contain h-24"
-            />
+            <Link href="https://chain.link/" passHref>
+              <a target="_blank">
+                <img
+                  src="/logos/chainlink-logo.png"
+                  alt="Chainlink Logo"
+                  className="block object-contain h-24"
+                />
+              </a>
+            </Link>
           </div>
           <div className="flex items-center justify-center">
-            <img
-              src="/logos/ipfs-logo.png"
-              alt="IPFS Logo"
-              className="block object-contain h-24"
-            />
+            <Link href="https://ipfs.io/" passHref>
+              <a target="_blank">
+                <img
+                  src="/logos/ipfs-logo.png"
+                  alt="IPFS Logo"
+                  className="block object-contain h-24"
+                />
+              </a>
+            </Link>
           </div>
           <div className="flex items-center justify-center">
-            <img
-              src="/logos/polygon-logo.png"
-              alt="Polygon Logo"
-              className="block object-contain h-24"
-            />
+            <Link href="https://polygon.technology/" passHref>
+              <a target="_blank">
+                <img
+                  src="/logos/polygon-logo.png"
+                  alt="Polygon Logo"
+                  className="block object-contain h-24"
+                />
+              </a>
+            </Link>
           </div>
         </div>
       </section>
