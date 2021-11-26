@@ -12,7 +12,7 @@ export default function Tech() {
         <br />
         <div className="grid grid-cols-2 gap-24 mb-16 text-center lg:grid-cols-4">
           <div className="flex items-center justify-center">
-            <Link href="https://polygon.technology/" passHref>
+            <Link href="https://moralis.io/" passHref>
               <a target="_blank">
                 <img
                   src="/logos/moralis-logo.png"
