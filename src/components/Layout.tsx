@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useMoralis } from "react-moralis";
 import Modal from "../utils/Modal";
 import PrimaryButton from "./Buttons/PrimaryButton";
 import Footer from "./Footer";
@@ -6,6 +7,14 @@ import Header from "./Header";
 
 const Layout: React.FC = ({ children }) => {
   const [successModal, setSuccessModal] = React.useState(false);
+  const { enableWeb3, isWeb3Enabled, isAuthenticated } = useMoralis();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      enableWeb3();
+    }
+  }, [enableWeb3, isAuthenticated]);
+
   return (
     <>
       <div className="flex flex-col justify-between min-h-screen">

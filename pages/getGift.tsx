@@ -1,12 +1,12 @@
 import React from "react";
-import GetGift from "../src/components/GetGift";
+import GetGiftComponent from "../src/components/GetGift";
 import Layout from "../src/components/Layout";
 
-export default function getGift() {
+export default function GetGift() {
   return (
     <Layout>
       <div />
-      <GetGift />
+      <GetGiftComponent />
     </Layout>
   );
 }

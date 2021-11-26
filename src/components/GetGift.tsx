@@ -1,20 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useMoralis, useMoralisSubscription } from "react-moralis";
 import { useGetGift } from "../hooks/fetchHooks";
 import Modal from "../utils/Modal";
 import PrimaryButton from "./Buttons/PrimaryButton";
 
 export default function GetGift() {
-  const { error, fetch, isFetching, isLoading } = useGetGift();
+  const { error, fetch, isFetching, isLoading, data, setData } = useGetGift();
+  const { user } = useMoralis();
   const [modal, setModal] = useState(false);
   const isRejected = error?.message.includes("User denied");
   const isNoMetamask = error?.message.includes("Missing web3 instance");
 
+  useMoralisSubscription(
+    "CharacterNFTMinted",
+    (query) =>
+      query
+        .equalTo("sender", user?.get("ethAddress"))
+        .descending("createdAt")
+        .limit(1),
+    [user?.get("ethAddress")],
+    {
+      onCreate: (data) =>
+        console.log(
+          `${data.attributes.characterIndex} was just added to your account`
+        ),
+    }
+  );
+
+  useEffect(() => {
+    console.log("DATa", data);
+
+    if (data) {
+      setModal(true);
+    }
+  }, [data]);
+
   const getRandomGift = async () => {
-    fetch().then((result: any) => {
-      if (result) {
-        setModal(true);
-      }
-    });
+    setData(null);
+    fetch();
   };
 
   return (

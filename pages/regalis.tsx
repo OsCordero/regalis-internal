@@ -71,7 +71,7 @@ const Regalis = () => {
     { autoFetch: true }
   );
 
-  web3?.eth.getChainId().then(console.log);
+  //web3?.eth.getChainId().then(console.log);
 
   const {
     data: lastObtained,
