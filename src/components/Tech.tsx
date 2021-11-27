@@ -11,7 +11,10 @@ export default function Tech() {
         <br />
         <br />
         <div className="grid grid-cols-2 gap-24 mb-16 text-center lg:grid-cols-4">
-          <div className="flex items-center justify-center">
+          <div
+            className="flex items-center justify-center"
+            data-aos="flip-right"
+          >
             <Link href="https://moralis.io/" passHref>
               <a target="_blank">
                 <img
@@ -22,7 +25,10 @@ export default function Tech() {
               </a>
             </Link>
           </div>
-          <div className="flex items-center justify-center">
+          <div
+            className="flex items-center justify-center"
+            data-aos="flip-right"
+          >
             <Link href="https://chain.link/" passHref>
               <a target="_blank">
                 <img
@@ -33,7 +39,10 @@ export default function Tech() {
               </a>
             </Link>
           </div>
-          <div className="flex items-center justify-center">
+          <div
+            className="flex items-center justify-center"
+            data-aos="flip-right"
+          >
             <Link href="https://ipfs.io/" passHref>
               <a target="_blank">
                 <img
@@ -44,7 +53,10 @@ export default function Tech() {
               </a>
             </Link>
           </div>
-          <div className="flex items-center justify-center">
+          <div
+            className="flex items-center justify-center"
+            data-aos="flip-right"
+          >
             <Link href="https://polygon.technology/" passHref>
               <a target="_blank">
                 <img

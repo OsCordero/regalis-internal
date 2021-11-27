@@ -7,11 +7,13 @@ export default function SuccessModal({
   message2,
   modal,
   handleClose,
+  actions,
 }: {
   message1: string;
-  message2: string;
+  message2?: React.ReactNode;
   modal: boolean;
   handleClose: React.Dispatch<React.SetStateAction<boolean>>;
+  actions?: React.ReactNode;
 }) {
   return (
     <>
@@ -39,9 +41,13 @@ export default function SuccessModal({
                 </span>
               </p>
               <div className="flex items-center justify-between gap-4 w-full mt-8">
-                <PrimaryButton onClick={() => handleClose(false)}>
-                  Close
-                </PrimaryButton>
+                {actions ? (
+                  actions
+                ) : (
+                  <PrimaryButton onClick={() => handleClose(false)}>
+                    Close
+                  </PrimaryButton>
+                )}
               </div>
             </div>
           </div>
