@@ -67,7 +67,6 @@ function HeroHome() {
                 data-aos-delay="300"
               >
                 <div>
-
                   <Link href="/getGift">
                     <a
                       href=""
@@ -76,7 +75,6 @@ function HeroHome() {
                       Get your NFT
                     </a>
                   </Link>
-
                 </div>
                 {/* <div>
                   <a
@@ -100,7 +98,7 @@ function HeroHome() {
               <div className="flex flex-col justify-center">
                 <img
                   className="mx-auto"
-                  src="/hero-image.png"
+                  src="/regalis-bg2.png"
                   width="768"
                   height="432"
                   alt="Hero"
@@ -113,7 +111,7 @@ function HeroHome() {
                   xmlns="http://www.w3.org/2000/svg"
                   xmlnsXlink="http://www.w3.org/1999/xlink"
                 >
-                  <defs>
+                  {/* <defs>
                     <linearGradient
                       x1="50%"
                       y1="0%"
@@ -169,7 +167,7 @@ function HeroHome() {
                       <use fill="#000" xlinkHref="#hero-ill-d" />
                       <use fill="url(#hero-ill-e)" xlinkHref="#hero-ill-d" />
                     </g>
-                  </g>
+                  </g> */}
                 </svg>
               </div>
               <button

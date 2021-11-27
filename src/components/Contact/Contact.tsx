@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Head from "next/head";
 import styles from "./Contact.module.scss";
-import Navbar from "../Navbar/Navbar";
+import SuccessModal from "../SuccessModal";
 
 type FormValues = {
   name: string;
@@ -11,6 +11,7 @@ type FormValues = {
 };
 
 export default function ContactTest() {
+  const [modal, setModal] = useState(false);
   const {
     register,
     handleSubmit,
@@ -21,6 +22,8 @@ export default function ContactTest() {
   const onSubmitForm = (data: any) => {
     // e.preventDefault()
     console.log("Sending");
+
+    setModal(true);
 
     fetch("/api/contact", {
       method: "POST",
@@ -148,6 +151,13 @@ export default function ContactTest() {
           </div>
         </div>
       </div>
+
+      <SuccessModal
+        modal={modal}
+        handleClose={() => setModal(false)}
+        message1="Message sent"
+        message2="We'll contact you."
+      />
     </>
   );
 }
