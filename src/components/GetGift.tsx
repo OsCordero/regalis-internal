@@ -1,48 +1,42 @@
 import React, { useEffect, useState } from "react";
-import { useMoralis, useMoralisSubscription } from "react-moralis";
+import { useMoralis, useMoralisWeb3Api } from "react-moralis";
 import { useGetGift } from "../hooks/fetchHooks";
 import PrimaryButton from "./Buttons/PrimaryButton";
 import SuccessModal from "./SuccessModal";
-
+import { registerName } from "../eth/register";
 export default function GetGift() {
-  const { error, fetch, isFetching, isLoading, data, setData } = useGetGift();
-  const { user } = useMoralis();
+  //const { error, fetch, isFetching, isLoading, data, setData } = useGetGift();
+  const { user, web3, Moralis } = useMoralis();
   const [modal, setModal] = useState(false);
-  const isRejected = error?.message.includes("User denied");
-  const isNoMetamask = error?.message.includes("Missing web3 instance");
+  // const isRejected = error?.message.includes("User denied");
+  // const isNoMetamask = error?.message.includes("Missing web3 instance");
 
-  useMoralisSubscription(
-    "CharacterNFTMinted",
-    (query) =>
-      query
-        .equalTo("sender", user?.get("ethAddress"))
-        .descending("createdAt")
-        .limit(1),
-    [user?.get("ethAddress")],
-    {
-      onCreate: (data) =>
-        console.log(
-          `${data.attributes.characterIndex} was just added to your account`
-        ),
-    }
-  );
+  // useEffect(() => {
+  //   if (data) {
+  //     setModal(true);
+  //   }
+  // }, [data]);
 
-  useEffect(() => {
-    console.log("DATa", data);
+  // const getRandomGift = async () => {
 
-    if (data) {
-      setModal(true);
-    }
-  }, [data]);
+  //   fetch(
+  //     "https://api.defender.openzeppelin.com/autotasks/5f92d353-7413-4d36-af23-4b3a6e400b25/runs/webhook/56656eb4-0c5f-4ccc-86ee-9e05851efc95/XsCBVKNdb7cE3sLDfM7QiA"
+  //   ).then((res) => {
+  //     console.log(res);
+  //   });
+  // };
+  const Web3Api = useMoralisWeb3Api();
 
   const getRandomGift = async () => {
-    setData(null);
-    fetch();
+    const response = await registerName(registry, provider, name);
   };
 
   return (
     <>
-      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div
+        className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+        data-aos="fade-down"
+      >
         <div className="flex flex-col max-w-screen-lg overflow-hidden bg-white border rounded shadow-sm lg:flex-row sm:mx-auto">
           <div className="relative lg:w-1/2">
             <img

@@ -8,7 +8,7 @@ function Modal({ children, id, ariaLabel, show, handleClose }) {
   // close the modal on click outside
   useEffect(() => {
     const clickHandler = ({ target }) => {
-      if (!show || modalContent.current.contains(target)) return;
+      if (!show || modalContent.current?.contains(target)) return;
       handleClose();
     };
     document.addEventListener("click", clickHandler);
