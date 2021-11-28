@@ -1,0 +1,166 @@
+/* .navbar {
+    height: 10vh;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.logo{
+    text-decoration-style: none;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 10rem;
+}
+
+.logo:hover{
+    cursor: pointer;
+}
+
+.navItems {
+    margin-right: 10px;
+    list-style: none;
+    display: flex;
+    text-align: center;
+    width: 100vw;
+    justify-content: flex-end;
+    margin-right: 0.5rem;
+} */
+
+.container {
+  max-height: 350px;
+  width: 100%;
+}
+
+.logo {
+  padding-right: 30px;
+  float: left;
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.navItems {
+  float: right;
+  margin-right: 5vw;
+  line-height: 200px;
+}
+
+.navItem strong:hover {
+  background: rgba(233, 81, 81, 0.562);
+  transition: 0.5s;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.navItem {
+  display: inline-block;
+  margin: 0 2.5vw;
+  margin-top: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 7px 13px;
+  border-radius: 3px;
+}
+
+.logo img {
+  margin-left: 2.5vw;
+}
+
+@media (max-width: 1450px) {
+  .navItems {
+    margin-right: 3.5vw;
+  }
+}
+
+@media (max-width: 1200px) {
+  // .logo {
+  //   height: 150px;
+  //   width: 150px;
+  // }
+  .navItems {
+    margin-right: 3vw;
+  }
+
+  .navItem {
+    font-size: 14px;
+    padding: 5px 10px;
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+}
+
+@media (max-width: 1100px) {
+  .logo {
+    padding-right: 0;
+    margin-right: 0;
+  }
+  .navItems {
+    margin-right: 1.5vw;
+  }
+}
+
+@media (max-width: 905px) {
+  .logo img {
+    padding-right: 0;
+    margin-right: 0;
+    height: 150px;
+    width: 150px;
+    margin-left: 1.5vw;
+  }
+  .navItems {
+    margin-right: 1vw;
+  }
+
+  .navItem {
+    font-size: 12px;
+    padding: 4px 8px;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+  }
+}
+
+@media (max-width: 725px) {
+  .logo img {
+    height: 125px;
+    width: 125px;
+    margin-left: 1vw;
+  }
+
+  .navItems {
+    margin-right: 0.75vw;
+  }
+
+  .navItem {
+    font-size: 10px;
+    padding: 3px 6px;
+    margin-left: 1vw;
+    margin-right: 1vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .logo img {
+    height: 90px;
+    width: 90px;
+  }
+
+  .navItems {
+    margin-right: 0.75vw;
+  }
+
+  .navItem {
+    font-size: 8px;
+    padding: 1.5px 3px;
+    margin-left: 0.75vw;
+    margin-right: 0.75vw;
+  }
+}
