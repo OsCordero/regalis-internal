@@ -63,10 +63,10 @@ export default function GetGift() {
               Get your Regalis NFT
             </h5>
             <p className="mb-5 text-gray-800">
-              <span className="font-bold">Lorem ipsum</span> dolor sit amet,
-              consectetur adipiscing elit. Etiam sem neque, molestie sit amet
-              venenatis et, dignissim ut erat. Sed aliquet velit id dui
-              eleifend, sed consequat odio sollicitudin.
+              <span className="font-bold">Regalis</span> is based on a smart
+              contract, which delivers a random NFT backed by IPFS, works thanks
+              to Chainlink VRF technology, which ensures that all gifts
+              generated are randomly
             </p>
             <div className="flex items-center w-48">
               <PrimaryButton
