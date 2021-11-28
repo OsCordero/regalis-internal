@@ -16,15 +16,10 @@ export default function ContactTest() {
     register,
     handleSubmit,
     formState: { errors },
-    resetField,
+    reset,
   } = useForm<FormValues>();
 
   const onSubmitForm = (data: any) => {
-    // e.preventDefault()
-    console.log("Sending");
-
-    setModal(true);
-
     fetch("/api/contact", {
       method: "POST",
       headers: {
@@ -33,15 +28,12 @@ export default function ContactTest() {
       },
       body: JSON.stringify(data),
     }).then((res) => {
-      console.log("Response received");
       if (res.status === 200) {
-        console.log("Response succeeded!");
+        setModal(true);
       }
     });
 
-    resetField("name");
-    resetField("email");
-    resetField("message");
+    reset();
   };
 
   return (

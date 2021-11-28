@@ -28,13 +28,10 @@ export default function (req, res) {
        <p><strong> Email: </strong> ${req.body.email}</p>
        <p><strong>Message: </strong> ${req.body.message} </p><br>`,
   };
-
   transporter.sendMail(mailData, function (err, info) {
     if (err) console.log(err);
     else console.log(info);
   });
 
-  res.status(200);
-
-  // console.log(req.body)
+  res.status(200).json({ message: "Message Sent" });
 }

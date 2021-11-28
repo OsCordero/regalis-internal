@@ -202,12 +202,14 @@ function HeroHome() {
         handleClose={() => setVideoModalOpen(false)}
       >
         <div className="relative pb-9/16">
-          <iframe
-            className="absolute w-full h-full"
-            src="https://player.vimeo.com/video/174002812"
-            title="Video"
-            allowFullScreen
-          ></iframe>
+          {videoModalOpen && (
+            <iframe
+              className="absolute w-full h-full"
+              src="https://www.youtube.com/embed/9J1N0mi9F_E"
+              title="Video"
+              allowFullScreen
+            ></iframe>
+          )}
         </div>
       </Modal>
     </section>
