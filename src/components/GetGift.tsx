@@ -11,25 +11,7 @@ export default function GetGift() {
   const isRejected = error?.message.includes("User denied");
   const isNoMetamask = error?.message.includes("Missing web3 instance");
 
-  useMoralisSubscription(
-    "CharacterNFTMinted",
-    (query) =>
-      query
-        .equalTo("sender", user?.get("ethAddress"))
-        .descending("createdAt")
-        .limit(1),
-    [user?.get("ethAddress")],
-    {
-      onCreate: (data) =>
-        console.log(
-          `${data.attributes.characterIndex} was just added to your account`
-        ),
-    }
-  );
-
   useEffect(() => {
-    console.log("DATa", data);
-
     if (data) {
       setModal(true);
     }

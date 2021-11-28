@@ -1,21 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import {
   useMoralis,
-  useWeb3ExecuteFunction,
   useMoralisQuery,
-  ByMoralis,
+  useWeb3ExecuteFunction,
 } from "react-moralis";
 import PrimaryButton from "../src/components/Buttons/PrimaryButton";
-import Header from "../src/components/Header";
+import Layout from "../src/components/Layout";
 import { abi } from "../src/constants/abi";
 import Modal from "../src/utils/Modal";
-import Footer from "../src/components/Footer";
+
 import Head from "next/head";
 
 export default function Profile() {
   const [showAlert, setShowAlert] = useState(false);
 
-  const { data, fetch } = useWeb3ExecuteFunction(
+  const {
+    data,
+    fetch,
+    isLoading: allRegalisLoading,
+  } = useWeb3ExecuteFunction(
     {
       abi: abi,
       contractAddress: process.env.NEXT_PUBLIC_REGALIS_NFT_CONTRACT_ADDRESS,
@@ -25,37 +29,13 @@ export default function Profile() {
   );
 
   const myData: any = data;
-  interface DefaultGift {
-    0: string;
-    1: string;
-    2: string;
-    3: string;
-    4: string;
-  }
 
-  const {
-    signup,
-    isInitialized,
-    enableWeb3,
-    isAuthenticating,
-    authError,
-    user,
-    isAuthenticated,
-    authenticate,
-    logout,
-    isWeb3Enabled,
-    environment,
-    Moralis,
-    auth,
-    web3,
-  } = useMoralis();
+  const { user, isAuthenticated, isWeb3Enabled, web3, isInitialized } =
+    useMoralis();
 
-  const {
-    data: dataObtained,
-    error: errordataObtained,
-    isLoading: isLoadingdataObtained,
-    isFetching: isFetchingdataObtained,
-  } = useMoralisQuery(
+  const router = useRouter();
+
+  const { data: dataObtained, isLoading: myRegalisloading } = useMoralisQuery(
     "CharacterNFTMinted",
     (query) => {
       return query
@@ -65,14 +45,12 @@ export default function Profile() {
     [user?.get("ethAddress")],
     { live: true }
   );
-  console.log(dataObtained);
 
   useEffect(() => {
-    enableWeb3();
     if (isWeb3Enabled) {
       fetch();
     }
-  }, [isWeb3Enabled, enableWeb3, fetch]);
+  }, [isWeb3Enabled, fetch]);
 
   useEffect(() => {
     if (isWeb3Enabled) {
@@ -82,14 +60,23 @@ export default function Profile() {
     }
   }, [isWeb3Enabled, web3?.eth]);
 
+  useEffect(() => {
+    if (!isAuthenticated && isInitialized) {
+      router.push("/login");
+    }
+  }, [isAuthenticated, isInitialized, router]);
+
   return (
+
     <>
       <Head>
         <title>Your Profile</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="logo.png" />
       </Head>
-      <Header />
+
+    <Layout>
+
       <div className="flex flex-col min-h-screen overflow-hidden">
         <Modal
           id="modal"
@@ -125,12 +112,6 @@ export default function Profile() {
         <section className="relative">
           <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 lg:pt-40">
             <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-              {/* <div>
-                <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-                  The gifts
-                </p>
-              </div> */}
-
               <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
                 <span className="relative inline-block">
                   <span className="relative">Check</span>
@@ -142,89 +123,57 @@ export default function Profile() {
                   "ethAddress"
                 )} This is your collection of Regalis NFT's`}
               </p>
-              {/* <button
-                type="button"
-                className="py-4 px-6 max-w-sm	mt-10 bg-purple-600 hover:bg-purple-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full"
-              >
-                Get Yours
-              </button> */}
+
               <br />
               <br />
             </div>
 
-            {/* <div className="grid gap-5 gap-y-11 mb-8 lg:grid-cols-4 sm:grid-cols-2">
-              {(data as any)?.map((nft: any) => (
-                <div
-                  className="relative flex flex-col items-center justify-center max-w-sm mx-auto shadow-xl"
-                  key={nft[0]}
-                >
-                  <img
-                    className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
-                    src={`https://cloudflare-ipfs.com/ipfs/${nft[2]}`}
-                    alt="Gift"
-                  />
-
-                  <div className="w-56 -mt-10 absolute -bottom-4 overflow-hidden bg-pink-500 text-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
-                    <h3 className="py-2 font-bold tracking-wide text-center text-white uppercase dark:text-white">
-                      {nft[1]}
-                    </h3>
-                  </div>
-                </div>
-              ))}
-            </div> */}
-
-            {console.log(data)}
-
-            {/* {(isLoadingdataObtained || isFetchingdataObtained) &&
-            dataObtained.length <= 0 &&
-            data ? (
-              <p>Loading...</p>
-            ) : (
-              <div>
-                <h3 className="text-center">This is your last minted NFT</h3>
-                <div className="relative flex flex-col items-center justify-center max-w-sm mx-auto shadow-xl">
-                  <img
-                    className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
-                    src={`https://cloudflare-ipfs.com/ipfs/${
-                      (data as any)?.[
-                        dataObtained[dataObtained.length - 1]?.attributes
-                          .characterIndex
-                      ]?.[2]
-                    }`}
-                    // alt={"Blabla"}
-                    // style={{ maxWidth: "200px" }}
-                  />
-                </div>
-              </div>
-            )} */}
-
             <br />
-            {data && (
+            {myRegalisloading || allRegalisLoading ? (
+              <div className="flex justify-center">
+                <svg
+                  width="150"
+                  height="150"
+                  fill="currentColor"
+                  className="mr-2 animate-spin text-purple-600"
+                  viewBox="0 0 1792 1792"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M526 1394q0 53-37.5 90.5t-90.5 37.5q-52 0-90-38t-38-90q0-53 37.5-90.5t90.5-37.5 90.5 37.5 37.5 90.5zm498 206q0 53-37.5 90.5t-90.5 37.5-90.5-37.5-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm-704-704q0 53-37.5 90.5t-90.5 37.5-90.5-37.5-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm1202 498q0 52-38 90t-90 38q-53 0-90.5-37.5t-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm-964-996q0 66-47 113t-113 47-113-47-47-113 47-113 113-47 113 47 47 113zm1170 498q0 53-37.5 90.5t-90.5 37.5-90.5-37.5-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm-640-704q0 80-56 136t-136 56-136-56-56-136 56-136 136-56 136 56 56 136zm530 206q0 93-66 158.5t-158 65.5q-93 0-158.5-65.5t-65.5-158.5q0-92 65.5-158t158.5-66q92 0 158 66t66 158z"></path>
+                </svg>
+              </div>
+            ) : null}
+            {data && dataObtained && (
               <div className="grid gap-5 gap-y-11 mb-8 lg:grid-cols-4 sm:grid-cols-2">
-                {(dataObtained as any)?.map((myNft: any) => {
+                {(dataObtained as any)?.map((myNft: any, index: number) => {
                   return (
-                    <>
-                      <div>
-                        <div className="relative flex flex-col items-center justify-center max-w-sm mx-auto shadow-xl">
-                          <img
-                            className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-lg"
-                            src={`https://cloudflare-ipfs.com/ipfs/${
-                              myData[myNft.attributes.characterIndex].imageURI
-                            }`}
-                            alt="Gift"
-                          />
-                          <div className="w-56 -mt-10 absolute -bottom-4 overflow-hidden bg-purple-600 text-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
-                            <h3 className="py-2 font-bold tracking-wide text-center text-white uppercase dark:text-white">
-                              {myData[myNft.attributes.characterIndex].name}
-                            </h3>
-                          </div>
+                    <div key={index}>
+                      <div className="relative flex flex-col items-center justify-center max-w-sm mx-auto shadow-xl">
+                        <img
+                          className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-lg"
+                          src={`https://cloudflare-ipfs.com/ipfs/${
+                            myData[myNft.attributes.characterIndex].imageURI
+                          }`}
+                          alt="Gift"
+                        />
+                        <div className="w-56 -mt-10 absolute -bottom-4 overflow-hidden bg-purple-600 text-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
+                          <h3 className="py-2 font-bold tracking-wide text-center text-white uppercase dark:text-white">
+                            {myData[myNft.attributes.characterIndex].name}
+                          </h3>
                         </div>
-                        <br />
-
-                        <p className="text-center">{`Purchase date: ${myNft.attributes.createdAt.toDateString()}`}</p>
-                        {console.log(myNft.attributes.block_timestamp)}
                       </div>
-                    </>
+                      <br />
+
+                      <p className="text-center">{`Purchase date: ${new Date(
+                        myNft.attributes.createdAt
+                      ).toLocaleString("en-US", {
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                      })}`}</p>
+                    </div>
                   );
                 })}
               </div>
@@ -232,8 +181,7 @@ export default function Profile() {
           </div>
         </section>
       </div>
-
-      <Footer />
-    </>
+    </Layout>
+      </>
   );
 }
