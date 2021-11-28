@@ -26,8 +26,6 @@ const Layout: React.FC = ({ children }) => {
     [user?.get("ethAddress")],
     {
       onCreate: () => {
-        console.log("CREATE");
-
         setSuccessModal(true);
       },
     }

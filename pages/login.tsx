@@ -32,7 +32,7 @@ const Login = () => {
           <div>
             <PrimaryButton
               className="text-lg"
-              onClick={() => authenticate().then(() => console.log("auth"))}
+              onClick={() => authenticate()}
               loading={isAuthenticating}
             >
               Connect with metamask
