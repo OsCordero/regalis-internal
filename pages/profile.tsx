@@ -10,6 +10,7 @@ import Header from "../src/components/Header";
 import { abi } from "../src/constants/abi";
 import Modal from "../src/utils/Modal";
 import Footer from "../src/components/Footer";
+import Head from "next/head";
 
 export default function Profile() {
   const [showAlert, setShowAlert] = useState(false);
@@ -83,6 +84,11 @@ export default function Profile() {
 
   return (
     <>
+      <Head>
+        <title>Your Profile</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="icon" href="logo.png" />
+      </Head>
       <Header />
       <div className="flex flex-col min-h-screen overflow-hidden">
         <Modal
