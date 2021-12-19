@@ -11,6 +11,7 @@ export default function landingPage() {
       <Head>
         <title>Regalis</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="icon" href="logo.png" />
       </Head>
       <Header />
       <HeroHome />
