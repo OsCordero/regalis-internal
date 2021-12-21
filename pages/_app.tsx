@@ -7,6 +7,7 @@ import "../src/styles/additional-styles/theme.scss";
 import "../src/styles/additional-styles/toggle-switch.scss";
 import "../src/styles/additional-styles/utility-patterns.scss";
 import AOS from "aos";
+import MetaTransactionProvider from "../src/context/MetaTransaction";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -18,20 +19,15 @@ function MyApp({ Component, pageProps }: AppProps) {
     });
   }, []);
 
-  // useEffect(() => {
-  //   document.querySelector("html").style.scrollBehavior = "auto";
-  //   window.scroll({ top: 0 });
-  //   document.querySelector("html").style.scrollBehavior = "";
-  //   focusHandling("outline");
-  // }, [location.pathname]);
-
   return (
-    <MoralisProvider
-      appId={process.env.NEXT_PUBLIC_APP_ID!}
-      serverUrl={process.env.NEXT_PUBLIC_SERVER_URL!}
-    >
-      <Component {...pageProps} />
-    </MoralisProvider>
+    <MetaTransactionProvider>
+      <MoralisProvider
+        appId={process.env.NEXT_PUBLIC_APP_ID!}
+        serverUrl={process.env.NEXT_PUBLIC_SERVER_URL!}
+      >
+        <Component {...pageProps} />
+      </MoralisProvider>
+    </MetaTransactionProvider>
   );
 }
 

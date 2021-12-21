@@ -25,7 +25,10 @@ const Layout: React.FC = ({ children }) => {
         .limit(1),
     [user?.get("ethAddress")],
     {
-      onCreate: () => {
+      onCreate: (ev) => {
+        console.log(ev);
+        console.log("YOUVE GOT A NEW REGALIS");
+
         setSuccessModal(true);
       },
     }

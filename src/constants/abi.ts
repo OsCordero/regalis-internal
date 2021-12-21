@@ -31,6 +31,11 @@ export const abi = [
         name: "_fee",
         type: "uint256",
       },
+      {
+        internalType: "contract MinimalForwarder",
+        name: "_minimalForwarder",
+        type: "address",
+      },
     ],
     stateMutability: "nonpayable",
     type: "constructor",
@@ -194,7 +199,7 @@ export const abi = [
             type: "string",
           },
         ],
-        internalType: "struct RegalisVRF.RegalisBoxes",
+        internalType: "struct Gaslessregalis.RegalisBoxes",
         name: "",
         type: "tuple",
       },
@@ -224,7 +229,7 @@ export const abi = [
             type: "string",
           },
         ],
-        internalType: "struct RegalisVRF.RegalisBoxes[]",
+        internalType: "struct Gaslessregalis.RegalisBoxes[]",
         name: "",
         type: "tuple[]",
       },
@@ -278,6 +283,25 @@ export const abi = [
       },
     ],
     name: "isApprovedForAll",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "forwarder",
+        type: "address",
+      },
+    ],
+    name: "isTrustedForwarder",
     outputs: [
       {
         internalType: "bool",
