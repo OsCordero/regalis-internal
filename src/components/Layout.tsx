@@ -26,9 +26,7 @@ const Layout: React.FC = ({ children }) => {
     [user?.get("ethAddress")],
     {
       onCreate: (ev) => {
-        console.log(ev);
-        console.log("YOUVE GOT A NEW REGALIS");
-
+        // console.log(ev);
         setSuccessModal(true);
       },
     }
