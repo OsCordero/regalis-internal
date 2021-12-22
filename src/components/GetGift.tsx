@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useMoralis, useMoralisSubscription } from "react-moralis";
+import { useMetaTransaction } from "../context/MetaTransaction";
+import { myFunc } from "../eth/mint";
 import { useGetGift } from "../hooks/fetchHooks";
 import PrimaryButton from "./Buttons/PrimaryButton";
 import SuccessModal from "./SuccessModal";
@@ -10,6 +12,8 @@ export default function GetGift() {
   const [modal, setModal] = useState(false);
   const isRejected = error?.message.includes("User denied");
   const isNoMetamask = error?.message.includes("Missing web3 instance");
+  const { provider, regalis } = useMetaTransaction();
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     if (data) {
@@ -20,6 +24,23 @@ export default function GetGift() {
   const getRandomGift = async () => {
     setData(null);
     fetch();
+  };
+
+  const sendTx = async () => {
+    setSubmitting(true);
+    console.log("HEREE");
+    try {
+      const response = await myFunc(regalis, provider);
+      console.log("RESPONSE", response);
+      const hash = response.hash;
+      const onClick = hash
+        ? () => window.open(`https://mumbai.polygonscan.com/tx/${hash}`)
+        : undefined;
+    } catch (err: any) {
+      console.log(err.message);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -52,7 +73,7 @@ export default function GetGift() {
             </p>
             <div className="flex items-center w-48">
               <PrimaryButton
-                onClick={() => getRandomGift()}
+                onClick={() => sendTx()}
                 loading={isFetching || isLoading}
               >
                 Get your Gift!

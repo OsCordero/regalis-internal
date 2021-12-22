@@ -25,7 +25,8 @@ const Layout: React.FC = ({ children }) => {
         .limit(1),
     [user?.get("ethAddress")],
     {
-      onCreate: () => {
+      onCreate: (ev) => {
+        // console.log(ev);
         setSuccessModal(true);
       },
     }
