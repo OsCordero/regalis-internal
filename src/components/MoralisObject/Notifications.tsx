@@ -4,12 +4,15 @@ import { useMoralis } from "react-moralis";
 
 const Notifications = async (email: string, number: string) => {
 
-const { Moralis } = useMoralis();
+const { Moralis, user } = useMoralis();
+
+    const ethadress = user?.get("ethAddress");
 
     class Notifications extends Moralis.Object {
         email: string;
         number: string;
         isEnabled: boolean;
+        address: any;
         constructor() {
         // Pass the ClassName to the Moralis.Object constructor
         super('Notifications');
@@ -17,6 +20,7 @@ const { Moralis } = useMoralis();
         this.email = '';
         this.number = ''; 
         this.isEnabled = true;
+        this.address = ethadress;
         }  
    
     }
