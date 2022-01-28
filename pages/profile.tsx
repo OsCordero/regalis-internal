@@ -9,6 +9,7 @@ import PrimaryButton from "../src/components/Buttons/PrimaryButton";
 import Layout from "../src/components/Layout";
 import { abi } from "../src/constants/abi";
 import Modal from "../src/utils/Modal";
+import NotificationForm from "../src/components/NotificationForm/NotificationForm";
 
 import Head from "next/head";
 import useNotifications from "../src/components/MoralisObject/Notifications";
@@ -137,13 +138,14 @@ export default function Profile() {
                 <br />
                 <br />
               </div>
-              <form onSubmit={handleSubmit(onSubmitForm)}>
+
+              {/* <form onSubmit={handleSubmit(onSubmitForm)}>
                 <input type="text" {...register("email")} />
                 <input type="text" {...register("phone")} />
                 <PrimaryButton className="mw-4" type="submit">
                   Activate
                 </PrimaryButton>
-              </form>
+              </form> */}
 
               <br />
               {myRegalisloading || allRegalisLoading ? (
@@ -197,6 +199,8 @@ export default function Profile() {
               )}
             </div>
           </section>
+
+          <NotificationForm />
         </div>
       </Layout>
     </>
