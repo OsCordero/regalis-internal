@@ -137,6 +137,16 @@ export default function Profile() {
 
                 <br />
                 <br />
+                <div className="max-w-3xl mx-auto">
+                  <div>
+                    <a
+                      href="#notifications"
+                      className="btn text-white bg-purple-600 self-center hover:bg-purple-700 mb-4 sm:w-auto sm:mb-0"
+                    >
+                      Subscribe to Notifications
+                    </a>
+                  </div>
+                </div>
               </div>
 
               {/* <form onSubmit={handleSubmit(onSubmitForm)}>
