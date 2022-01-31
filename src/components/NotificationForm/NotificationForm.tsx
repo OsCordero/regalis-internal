@@ -25,7 +25,7 @@ export default function NotificationForm() {
   };
   return (
     <>
-      <div className={styles.center}>
+      <div className={styles.center} id="notifications">
         <h1 className="text-2xl center md:text-4xl font-extrabold leading-tighter tracking-tighter mb-4">
           Want to get notifications?
         </h1>
@@ -40,7 +40,7 @@ export default function NotificationForm() {
       <br />
       <div className="shadow-2xl max-w-2xl mx-auto rounded-3xl ">
         <div>
-          <div className="px-8 py-10 md:p-20 ">
+          <div className="px-8 py-10 md:p-20">
             <form className="w-full" onSubmit={handleSubmit(onSubmitForm)}>
               <div className={styles.inputDiv}>
                 <label htmlFor="email">E-mail: </label>
