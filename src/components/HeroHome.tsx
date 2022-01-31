@@ -37,7 +37,6 @@ function HeroHome() {
           </g>
         </svg>
       </div>
-
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Hero content */}
         <div className="pt-32 pb-12 md:pt-40 md:pb-20">
@@ -72,7 +71,7 @@ function HeroHome() {
                       href=""
                       className="btn text-white bg-purple-600 hover:bg-purple-700 w-full mb-4 sm:w-auto sm:mb-0"
                     >
-                      Get your Gift!
+                      Activate notifications
                     </a>
                   </Link>
                 </div>
