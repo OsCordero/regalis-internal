@@ -32,12 +32,14 @@ export const useNotifications = () => {
     await notifications.save().then(
       (notifications) => {
         // Execute any logic that should take place after the object is saved.
-        alert("New object created with objectId: " + notifications.id);
+        alert("New notification created with objectId: " + notifications.id);
       },
       (error) => {
         // Execute any logic that should take place if the save fails.
         // error is a Moralis.Error with an error code and message.
-        alert("Failed to create new object, with error code: " + error.message);
+        alert(
+          "Failed to create new notification, with error code: " + error.message
+        );
       }
     );
   };
